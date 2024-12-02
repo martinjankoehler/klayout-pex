@@ -8,6 +8,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+concurrency:
+  group: ${{ github.repository }}-${{ github.event.number || github.head_ref || github.sha }}-${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -52,12 +56,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
+    
     - name: "[C++] Ccache for gh actions"
       uses: hendrikmuhs/ccache-action@v1.2.14
       with:
         key: ${{ github.job }}-${{ matrix.os }}  # Eg. "some_build-ubuntu-latest"
-
+        
     - name: "Set reusable strings"
       # Turn repeated input strings (such as the build output directory) into step outputs.
       # These step outputs can be used throughout the workflow file.
@@ -66,12 +70,23 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
+    - name: "[C++] Set up CPM cache"
+      id: cache-cpm
+      uses: actions/cache@v2
+      with:
+        path: ~/cpm-cache
+        key: ${{ runner.os }}-cpm-${{ hashFiles('**/') }}
+        restore-keys: |
+          ${{ runner.os }}-cpm-
+
     - name: "[C++] Configure CMake"
       # Configure CMake in a 'build' subdirectory.
       # `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: >
-        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        cmake 
+        -B ${{ steps.strings.outputs.build-output-dir }}
+        -DCPM_SOURCE_CACHE=~/cpm-cache
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
         -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
@@ -82,7 +97,11 @@ jobs:
     - name: "[C++] Build"
       # Build your program with the given configuration.
       # Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
-      run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
+      run: >
+        cmake 
+        -DCPM_SOURCE_CACHE=~/cpm-cache
+        --build ${{ steps.strings.outputs.build-output-dir }} 
+        --config ${{ matrix.build_type }}
 
     - name: "[C++] Test"
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
@@ -90,3 +109,117 @@ jobs:
       # Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
+
+  test:
+    needs: build
+
+    strategy:
+        # fail-fast: true
+        matrix:
+            os: [ubuntu-latest, macos-latest]
+            python-version: ['3.13']
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      ALLURE_RESULTS_PATH: 'build/${{ matrix.os }}_${{ matrix.python-version }}/allure-results'
+      ALLURE_REPORTS_PATH: 'build/${{ matrix.os }}_${{ matrix.python-version }}/allure-reports'
+      COVERAGE_REPORT_PATH: 'build/${{ matrix.os }}_${{ matrix.python-version }}/python-coverage-report'
+
+    steps:
+      #----------------------------------------------
+      #       check-out repo and set-up python
+      #----------------------------------------------
+      - name: "[Python] checkout repository"
+        uses: actions/checkout@v4
+        
+      - name: "[Python] Setup python ${{ matrix.python-version }}"
+        id: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      #----------------------------------------------
+      #  -----  install & configure poetry  -----
+      #----------------------------------------------
+      - name: "[Python] Install Poetry"
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          virtualenvs-path: .venv
+          installer-parallel: true
+      
+      #----------------------------------------------
+      #       load cached venv if cache exists
+      #----------------------------------------------
+      - name: "[Python] Load cached venv"
+        id: cached-poetry-dependencies
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          
+      #----------------------------------------------
+      # install dependencies if cache does not exist
+      #----------------------------------------------
+      - name: "[Python] Install dependencies"
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+        
+      #----------------------------------------------
+      # install your root project, if required
+      #----------------------------------------------
+      - name: "[Python] Install project"
+        run: poetry install --no-interaction
+      
+      #----------------------------------------------
+      #              run test suite
+      #----------------------------------------------
+      - name: "[Python] Run tests"
+        run: >
+          poetry run pytest 
+          --alluredir $ALLURE_RESULTS_PATH 
+          --color no 
+          --cov $COVERAGE_REPORT_PATH 
+          --cov-report html 
+
+      - name: "[Python] Create coverage report"
+        run: poetry run coverage report
+
+      - name: "[Python] Store coverage results"
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-coverage-report
+          path: $COVERAGE_REPORT_PATH
+          retention-days: 1
+
+      - name: "Set up JDK (for Allure)"
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 17
+
+      - name: "Load test report history (Allure)"
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: "Build test report"
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: build/allure-results
+
+      - name: "Publish test report"
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
