@@ -129,6 +129,17 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
 
+    - name: "[C++] Generate PB Tech"
+      run: ./gen_tech_pb
+
+    - name: "[C++] Store Build Products"
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.job }}-${{ matrix.os }}    # -${{ matrix.build_type }}
+        path: |
+          build/python             # Generated Python Protobuffer Classes
+          build/*_tech.pb.json     # KPEX Tech Info Protobuffers
+
   test:
     needs: build
 
@@ -144,14 +155,17 @@ jobs:
       ALLURE_RESULTS_PATH: 'build/${{ matrix.os }}_${{ matrix.python-version }}/allure-results'
       ALLURE_REPORTS_PATH: 'build/${{ matrix.os }}_${{ matrix.python-version }}/allure-reports'
       COVERAGE_REPORT_PATH: 'build/${{ matrix.os }}_${{ matrix.python-version }}/python-coverage-report'
+      PYTHONPATH: .:build/python:$PYTHONPATH
 
     steps:
-      #----------------------------------------------
-      #       check-out repo and set-up python
-      #----------------------------------------------
       - name: "[Python] checkout repository"
         uses: actions/checkout@v4
-        
+
+      - name: "[Python] Retrieve C++ Build Artifact"
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ matrix.os }}
+      
       - name: "[Python] Setup python ${{ matrix.python-version }}"
         id: setup-python
         uses: actions/setup-python@v5
