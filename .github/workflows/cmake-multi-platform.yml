@@ -129,6 +129,15 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
 
+    - name: "[C++] Save listing of build dir"
+      run: find ${{github.workspace}}/build > ${{github.workspace}}/build/path_listing.txt
+      
+    - name: "[C++] Store Build Products"
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.job }}-${{ matrix.os }}_paths
+        path: ${{github.workspace}}/build/path_listing.txt
+
     - name: "[C++] Generate PB Tech"
       run: ${{github.workspace}}/gen_tech_pb
 
