@@ -139,7 +139,7 @@ jobs:
         path: ${{github.workspace}}/build/path_listing.txt
 
     - name: "[C++] Generate PB Tech"
-      run: ${{github.workspace}}/gen_tech_pb
+      run: ${{github.workspace}}/build/gen_tech_pb
 
     - name: "[C++] Store Build Products"
       uses: actions/upload-artifact@v4
