@@ -107,7 +107,6 @@ jobs:
       run: >
         cmake 
         -B ${{ steps.strings.outputs.build-output-dir }}
-        -DCPM_SOURCE_CACHE=~/cpm-cache
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
         -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
@@ -120,7 +119,6 @@ jobs:
       # Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       run: >
         cmake 
-        -DCPM_SOURCE_CACHE=~/cpm-cache
         --build ${{ steps.strings.outputs.build-output-dir }} 
         --config ${{ matrix.build_type }}
 
