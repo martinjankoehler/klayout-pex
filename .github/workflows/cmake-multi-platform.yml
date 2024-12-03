@@ -140,11 +140,13 @@ jobs:
 
     - name: "[C++] Generate PB Tech (Windows)"
       if: ${{ matrix.os == 'windows-latest' }}
-      run: ${{github.workspace}}\build\${{matrix.build_type}}\gen_tech_pb.exe
+      run: build\${{matrix.build_type}}\gen_tech_pb.exe
+      working-directory: ${{github.workspace}}
 
     - name: "[C++] Generate PB Tech (Unix)"
       if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
-      run: ${{github.workspace}}/build/gen_tech_pb
+      run: build/gen_tech_pb
+      working-directory: ${{github.workspace}}
 
     - name: "[C++] Store Build Products"
       uses: actions/upload-artifact@v4
