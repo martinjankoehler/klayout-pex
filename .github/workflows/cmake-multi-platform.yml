@@ -138,7 +138,12 @@ jobs:
     #     name: ${{ github.job }}-${{ matrix.os }}_paths
     #     path: ${{github.workspace}}/build/path_listing.txt
 
-    - name: "[C++] Generate PB Tech"
+    - name: "[C++] Generate PB Tech (Windows)"
+      if: ${{ runner.os == 'windows-latest' }}
+      run: ${{github.workspace}}\build\${{matrix.build_type}}\gen_tech_pb.exe
+
+    - name: "[C++] Generate PB Tech (Unix)"
+      if: ${{ runner.os != 'windows-latest' }}
       run: ${{github.workspace}}/build/gen_tech_pb
 
     - name: "[C++] Store Build Products"
