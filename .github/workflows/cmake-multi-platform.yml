@@ -129,14 +129,14 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
 
-    - name: "[C++] Save listing of build dir"
-      run: find ${{github.workspace}}/build > ${{github.workspace}}/build/path_listing.txt
+    # - name: "[C++] Save listing of build dir"
+    #   run: find ${{github.workspace}}/build > ${{github.workspace}}/build/path_listing.txt
       
-    - name: "[C++] Store Build Products"
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ github.job }}-${{ matrix.os }}_paths
-        path: ${{github.workspace}}/build/path_listing.txt
+    # - name: "[C++] Store Build Products"
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: ${{ github.job }}-${{ matrix.os }}_paths
+    #     path: ${{github.workspace}}/build/path_listing.txt
 
     - name: "[C++] Generate PB Tech"
       run: ${{github.workspace}}/build/gen_tech_pb
@@ -146,8 +146,8 @@ jobs:
       with:
         name: ${{ github.job }}-${{ matrix.os }}    # -${{ matrix.build_type }}
         path: |
-          build/python             # Generated Python Protobuffer Classes
-          build/*_tech.pb.json     # KPEX Tech Info Protobuffers
+          ${{github.workspace}}/build/python             # Generated Python Protobuffer Classes
+          ${{github.workspace}}/build/*_tech.pb.json     # KPEX Tech Info Protobuffers
 
   test:
     needs: build
