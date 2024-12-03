@@ -152,9 +152,12 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ github.job }}-${{ matrix.os }}    # -${{ matrix.build_type }}
+        # Generated Python Protobuffer Classes
+        # KPEX Tech Info Protobuffers
         path: |
-          ${{github.workspace}}/build/python             # Generated Python Protobuffer Classes
-          ${{github.workspace}}/build/*_tech.pb.json     # KPEX Tech Info Protobuffers
+          ${{github.workspace}}/build/python/
+          ${{github.workspace}}/build/*_tech.pb.json
+        if-no-files-found: error
 
   test:
     needs: build
