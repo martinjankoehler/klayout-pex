@@ -1,0 +1,1 @@
+Wrote reduced netlist to: /var/folders/0w/4z5l9vds32nbkz7l22n8j6s80000gn/T/TOP_Reduced_Netlist_2n6q4ltf.cir
