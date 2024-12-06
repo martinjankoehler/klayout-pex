@@ -49,7 +49,7 @@ jobs:
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          gh_pages: gh-pages
+          gh_pages: allure-results
           allure_history: allure-history
           allure_results: build/allure-results
 
@@ -60,6 +60,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+          destination_dir: ./allure
 
   python-coverage-report:
     name: "Generate Coverage Report (Aggregated Suites)"
