@@ -60,7 +60,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
-          # destination_dir: allure-report
+          destination_dir: allure
 
   python-coverage-report:
     name: "Generate Coverage Report (Aggregated Suites)"
