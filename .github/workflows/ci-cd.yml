@@ -243,7 +243,6 @@ jobs:
     name: "Trigger workflow to publish distribution 📦s to PyPI/TestPyPI"
     needs: build_and_test
     uses: ./.github/workflows/publish-pypi.yml
-    continue-on-error: true
 
   call-publish-reports-github-pages:
     name: "Trigger workflow to publish reports to GitHub Pages"
