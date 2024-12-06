@@ -50,8 +50,9 @@ jobs:
         if: always()
         with:
           gh_pages: allure-results
-          allure_history: allure-history
+          # allure_history: allure-history
           allure_results: build/allure-results
+          subfolder: allure-results
 
       - name: "Publish test report"
         uses: peaceiris/actions-gh-pages@v4
