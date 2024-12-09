@@ -1,0 +1,72 @@
+[17:54:27] INFO     DBU: 0.001                  fastercap_model_generator.py:119
+[17:54:27] INFO     Delaunay b: 0.5             fastercap_model_generator.py:120
+[17:54:27] INFO     Delaunay area_max: 0.5      fastercap_model_generator.py:121
+[17:54:27] INFO     Checking …                  fastercap_model_generator.py:842
+[17:54:27] INFO     Material nit -> 219         fastercap_model_generator.py:847
+                    triangles                                                   
+[17:54:28] INFO     Material nit2 -> 124        fastercap_model_generator.py:847
+                    triangles                                                   
+[17:54:29] INFO     Net 'Net1' -> 69 triangles  fastercap_model_generator.py:852
+[17:54:29] INFO     Net 'Net2' -> 52 triangles  fastercap_model_generator.py:852
+[17:54:29] INFO       No errors found           fastercap_model_generator.py:856
+[17:54:29] INFO     Writing FasterCap geo file: fastercap_model_generator.py:826
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test1_ou                                 
+                    tside=(void)_inside=nit.geo                                 
+[17:54:29] INFO     Writing FasterCap geo file: fastercap_model_generator.py:826
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test2_ou                                 
+                    tside=(void)_inside=nit2.ge                                 
+                    o                                                           
+[17:54:29] INFO     Writing FasterCap geo file: fastercap_model_generator.py:826
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test3_ou                                 
+                    tside=nit2_inside=nit.geo                                   
+[17:54:29] INFO     Writing FasterCap geo file: fastercap_model_generator.py:826
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test4_ou                                 
+                    tside=(void)_net=Net1.geo                                   
+[17:54:29] INFO     Writing FasterCap geo file: fastercap_model_generator.py:826
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test5_ou                                 
+                    tside=nit_net=Net1.geo                                      
+[17:54:29] INFO     Writing FasterCap geo file: fastercap_model_generator.py:826
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test6_ou                                 
+                    tside=(void)_net=Net2.geo                                   
+[17:54:29] INFO     Writing FasterCap geo file: fastercap_model_generator.py:826
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test7_ou                                 
+                    tside=nit_net=Net2.geo                                      
+[17:54:29] INFO     Writing FasterCap list      fastercap_model_generator.py:813
+                    file:                                                       
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/FasterCap/test.lst                                 
+[17:54:29] INFO     Writing STL file            fastercap_model_generator.py:976
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/STL/testdiel_nit.s                                 
+                    tl                                                          
+[17:54:29] INFO     Writing STL file            fastercap_model_generator.py:976
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/STL/testdiel_nit2.                                 
+                    stl                                                         
+[17:54:29] INFO     Writing STL file            fastercap_model_generator.py:976
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/STL/testcond_Net1.                                 
+                    stl                                                         
+[17:54:29] INFO     Writing STL file            fastercap_model_generator.py:976
+                    /tmp/pytest-of-runner/pytes                                 
+                    t-0/test_fastercap_model_ge                                 
+                    nerator0/STL/testcond_Net2.                                 
+                    stl                                                         
