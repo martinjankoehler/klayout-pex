@@ -25,12 +25,13 @@ classifiers = [
 ]
 
 packages = [
-    { include = "kpex" },
-    { include = "process_stack_pb2.py", from = "build/python_kpex_protobuf/", to = "." },
-    { include = "process_parasitics_pb2.py", from = "build/python_kpex_protobuf/", to = "." },
-    { include = "tech_pb2.py", from = "build/python_kpex_protobuf/", to = "." },
-    { include = "build/sky130A_tech.pb.json" },
-    { include = "build/ihp_sg13g2_tech.pb.json" },
+    { include = "kpex", to = "klayout_pex" },
+    { include = "pdk", to = "klayout_pex" },
+    { include = "process_stack_pb2.py", from = "build/python_kpex_protobuf/", to = "klayout_pex" },
+    { include = "process_parasitics_pb2.py", from = "build/python_kpex_protobuf/", to = "klayout_pex" },
+    { include = "tech_pb2.py", from = "build/python_kpex_protobuf/", to = "klayout_pex" },
+    { include = "build/sky130A_tech.pb.json", to = "klayout_pex" },
+    { include = "build/ihp_sg13g2_tech.pb.json", to = "klayout_pex"  },
 ]
 include = [
     "kpex",
