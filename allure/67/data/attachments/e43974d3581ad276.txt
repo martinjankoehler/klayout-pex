@@ -1,0 +1,15 @@
+WARNING  __kpex__:lvsdb_extractor.py:191 Unable to find info about extracted LVS layer 'l5'
+WARNING  __kpex__:lvsdb_extractor.py:191 Unable to find info about extracted LVS layer 'l11'
+WARNING  __kpex__:lvsdb_extractor.py:191 Unable to find info about extracted LVS layer 'l2'
+WARNING  __kpex__:lvsdb_extractor.py:191 Unable to find info about extracted LVS layer 'l1'
+INFO     __kpex__:lvsdb_extractor.py:125 (66, 44) -> (licon)
+INFO     __kpex__:lvsdb_extractor.py:125 (67, 44) -> (mcon)
+INFO     __kpex__:lvsdb_extractor.py:125 (68, 44) -> (via1)
+INFO     __kpex__:lvsdb_extractor.py:125 (93, 44) -> (nsd)
+INFO     __kpex__:lvsdb_extractor.py:125 (65, 244) -> (ptap_conn)
+INFO     __kpex__:lvsdb_extractor.py:125 (66, 20) -> (poly_con)
+INFO     __kpex__:lvsdb_extractor.py:125 (67, 20) -> (li_con)
+INFO     __kpex__:lvsdb_extractor.py:125 (68, 20) -> (met1_con)
+INFO     __kpex__:lvsdb_extractor.py:125 (69, 20) -> (met2_con)
+INFO     __kpex__:netlist_expander.py:50 Removing whiteboxed device $1
+WARNING  __kpex__:netlist_expander.py:92 Ignoring capacitance matrix cell [2,2], -1.81619e-16 is below threshold 0

@@ -1,0 +1,98 @@
+[18:14:06] INFO     DBU: 0.001                 fastercap_model_generator.py:119
+[18:14:06] INFO     Delaunay b: 0.5            fastercap_model_generator.py:120
+[18:14:06] INFO     Delaunay area_max: 0.5     fastercap_model_generator.py:121
+[18:14:06] INFO     Checking …                 fastercap_model_generator.py:842
+[18:14:06] INFO     Material nit -> 219        fastercap_model_generator.py:847
+                    triangles                                                  
+[18:14:06] INFO     Material nit2 -> 124       fastercap_model_generator.py:847
+                    triangles                                                  
+[18:14:07] INFO     Net 'Net1' -> 69 triangles fastercap_model_generator.py:852
+[18:14:07] INFO     Net 'Net2' -> 52 triangles fastercap_model_generator.py:852
+[18:14:07] INFO       No errors found          fastercap_model_generator.py:856
+[18:14:07] INFO     Writing FasterCap geo      fastercap_model_generator.py:826
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test1_outside=(vo                                 
+                    id)_inside=nit.geo                                         
+[18:14:07] INFO     Writing FasterCap geo      fastercap_model_generator.py:826
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test2_outside=(vo                                 
+                    id)_inside=nit2.geo                                        
+[18:14:07] INFO     Writing FasterCap geo      fastercap_model_generator.py:826
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test3_outside=nit                                 
+                    2_inside=nit.geo                                           
+[18:14:07] INFO     Writing FasterCap geo      fastercap_model_generator.py:826
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test4_outside=(vo                                 
+                    id)_net=Net1.geo                                           
+[18:14:07] INFO     Writing FasterCap geo      fastercap_model_generator.py:826
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test5_outside=nit                                 
+                    _net=Net1.geo                                              
+[18:14:07] INFO     Writing FasterCap geo      fastercap_model_generator.py:826
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test6_outside=(vo                                 
+                    id)_net=Net2.geo                                           
+[18:14:07] INFO     Writing FasterCap geo      fastercap_model_generator.py:826
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test7_outside=nit                                 
+                    _net=Net2.geo                                              
+[18:14:07] INFO     Writing FasterCap list     fastercap_model_generator.py:813
+                    file:                                                      
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\F                                 
+                    asterCap\test.lst                                          
+[18:14:07] INFO     Writing STL file           fastercap_model_generator.py:976
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\S                                 
+                    TL\testdiel_nit.stl                                        
+[18:14:07] INFO     Writing STL file           fastercap_model_generator.py:976
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\S                                 
+                    TL\testdiel_nit2.stl                                       
+[18:14:07] INFO     Writing STL file           fastercap_model_generator.py:976
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\S                                 
+                    TL\testcond_Net1.stl                                       
+[18:14:07] INFO     Writing STL file           fastercap_model_generator.py:976
+                    C:\Users\runneradmin\AppDa                                 
+                    ta\Local\Temp\pytest-of-ru                                 
+                    nneradmin\pytest-0\test_fa                                 
+                    stercap_model_generator0\S                                 
+                    TL\testcond_Net2.stl                                       
