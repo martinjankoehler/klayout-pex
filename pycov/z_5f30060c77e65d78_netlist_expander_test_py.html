@@ -64,8 +64,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="z_5f30060c77e65d78_netlist_reducer_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.8">coverage.py v7.6.8</a>,
-            created at 2024-12-09 17:54 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
+            created at 2024-12-10 18:10 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -112,13 +112,13 @@
     <p class="pln"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t31" href="#t31">31</a></span><span class="t"><span class="key">import</span> <span class="nam">klayout</span><span class="op">.</span><span class="nam">db</span> <span class="key">as</span> <span class="nam">kdb</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t33" href="#t33">33</a></span><span class="t"><span class="key">from</span> <span class="nam">kpex</span><span class="op">.</span><span class="nam">klayout</span><span class="op">.</span><span class="nam">lvsdb_extractor</span> <span class="key">import</span> <span class="nam">KLayoutExtractionContext</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t34" href="#t34">34</a></span><span class="t"><span class="key">from</span> <span class="nam">kpex</span><span class="op">.</span><span class="nam">klayout</span><span class="op">.</span><span class="nam">netlist_expander</span> <span class="key">import</span> <span class="nam">NetlistExpander</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t35" href="#t35">35</a></span><span class="t"><span class="key">from</span> <span class="nam">kpex</span><span class="op">.</span><span class="nam">log</span> <span class="key">import</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t33" href="#t33">33</a></span><span class="t"><span class="key">from</span> <span class="nam">klayout_pex</span><span class="op">.</span><span class="nam">klayout</span><span class="op">.</span><span class="nam">lvsdb_extractor</span> <span class="key">import</span> <span class="nam">KLayoutExtractionContext</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t34" href="#t34">34</a></span><span class="t"><span class="key">from</span> <span class="nam">klayout_pex</span><span class="op">.</span><span class="nam">klayout</span><span class="op">.</span><span class="nam">netlist_expander</span> <span class="key">import</span> <span class="nam">NetlistExpander</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t35" href="#t35">35</a></span><span class="t"><span class="key">from</span> <span class="nam">klayout_pex</span><span class="op">.</span><span class="nam">log</span> <span class="key">import</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t36" href="#t36">36</a></span><span class="t">    <span class="nam">debug</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t37" href="#t37">37</a></span><span class="t"><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t38" href="#t38">38</a></span><span class="t"><span class="key">from</span> <span class="nam">kpex</span><span class="op">.</span><span class="nam">common</span><span class="op">.</span><span class="nam">capacitance_matrix</span> <span class="key">import</span> <span class="nam">CapacitanceMatrix</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t39" href="#t39">39</a></span><span class="t"><span class="key">from</span> <span class="nam">kpex</span><span class="op">.</span><span class="nam">tech_info</span> <span class="key">import</span> <span class="nam">TechInfo</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t38" href="#t38">38</a></span><span class="t"><span class="key">from</span> <span class="nam">klayout_pex</span><span class="op">.</span><span class="nam">common</span><span class="op">.</span><span class="nam">capacitance_matrix</span> <span class="key">import</span> <span class="nam">CapacitanceMatrix</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t39" href="#t39">39</a></span><span class="t"><span class="key">from</span> <span class="nam">klayout_pex</span><span class="op">.</span><span class="nam">tech_info</span> <span class="key">import</span> <span class="nam">TechInfo</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t40" href="#t40">40</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t41" href="#t41">41</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t42" href="#t42">42</a></span><span class="t"><span class="op">@</span><span class="nam">allure</span><span class="op">.</span><span class="nam">parent_suite</span><span class="op">(</span><span class="str">"Unit Tests"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -173,8 +173,8 @@
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a class="nav" href="z_5f30060c77e65d78_netlist_reducer_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.8">coverage.py v7.6.8</a>,
-            created at 2024-12-09 17:54 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
+            created at 2024-12-10 18:10 +0000
         </p>
     </div>
 </footer>
