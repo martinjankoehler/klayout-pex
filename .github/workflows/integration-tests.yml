@@ -45,7 +45,7 @@ jobs:
     - name: "Install Docker and run tests"
       uses: adambirds/docker-compose-action@v1.5.0
       with:
-        compose-file: "./test/fixtures/docker-compose.yml"
+        compose-file: "./tests/fixtures/docker-compose.yml"
         test-container: iic-osic-tools
         test-command: |
           echo "Hello World"
