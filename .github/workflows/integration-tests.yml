@@ -26,6 +26,10 @@ name: "Integration tests on IIC-OSIC-TOOLS"
 
 on:
   workflow_call:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - '.github/workflows/integration-tests.yml'
 
 jobs:
   tests-inside-docker:
