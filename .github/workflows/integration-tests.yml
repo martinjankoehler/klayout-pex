@@ -40,16 +40,22 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Generate Cache Key from Dockerfiles
+      id: generate_cache_key
+      run: |
+        files="./tests/fixtures/docker-compose.yml"
+        file_contents=$(cat $files)
+        key=$(echo "${file_contents}" | sha1sum | awk '{print $1}')
+        echo "key=${key}" >> "$GITHUB_OUTPUT"
+
     - name: "Cache Docker images"
       uses: ScribeMD/docker-cache@0.5.0
       with:
-        key: docker-${{ runner.os }}
+        key: docker-${{ runner.os }}-integration-tests-${{ steps.generate_cache_key.outputs.key }}
         
-    - run: pwd && find .
-    
     - name: "Install Docker and run tests"
       uses: adambirds/docker-compose-action@v1.5.0
       with:
         compose-file: "./tests/fixtures/docker-compose.yml"
         test-container: iic-osic-tools
-        test-command: "--skip bash -c \"which klayout; klayout --version\""
+        test-command: ./run_integration_tests.sh
