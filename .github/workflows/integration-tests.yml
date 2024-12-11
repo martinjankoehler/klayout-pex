@@ -33,23 +33,23 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
 
-  steps:
-  - uses: actions/checkout@v4
+    steps:
+    - uses: actions/checkout@v4
     
-  - name: "Install Docker"
-    uses: tj-actions/docker-run@v2
-    with:
-      image: hpretl/iic-osic-tools:latest
-      name: iic-osic-tools
-      options: >
-        --user=0:0
-        --env=LC_ALL=en_US.UTF-8
-        --env=LANG=en_US.UTF-8
-        --env=NO_VNC_PORT=80
-        --env=JUPYTER_PORT=8888
-      args: |
-        echo "Hello World"
-        which klayout
-        klayout --version
+    - name: "Install Docker"
+      uses: tj-actions/docker-run@v2
+      with:
+        image: hpretl/iic-osic-tools:latest
+        name: iic-osic-tools
+        options: >
+          --user=0:0
+          --env=LC_ALL=en_US.UTF-8
+          --env=LANG=en_US.UTF-8
+          --env=NO_VNC_PORT=80
+          --env=JUPYTER_PORT=8888
+        args: |
+          echo "Hello World"
+          which klayout
+          klayout --version
 
     
