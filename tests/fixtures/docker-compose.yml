@@ -1,7 +1,6 @@
 services:
   iic-osic-tools:
     image: hpretl/iic-osic-tools:latest
-    container-name: iic-osic-tools
     user: "0:0"
     environment:
       - LC_ALL=en_US.UTF-8
