@@ -1,0 +1,2 @@
+[16:09:06] INFO     Removed device CEXT_3_2 3.34875e-17    netlist_reducer.py:60
+Wrote reduced netlist to: /var/folders/0w/4z5l9vds32nbkz7l22n8j6s80000gn/T/nmos_diode2_Reduced_Netlist_6kb02fvr.cir
