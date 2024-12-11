@@ -52,4 +52,4 @@ jobs:
       with:
         compose-file: "./tests/fixtures/docker-compose.yml"
         test-container: iic-osic-tools
-        test-command: --skip bash -c "which klayout; klayout --version"
+        test-command: "--skip bash -c \"which klayout; klayout --version\""
