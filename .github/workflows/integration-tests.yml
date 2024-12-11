@@ -40,6 +40,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
+    - run: pwd && find .
+    
     - name: "Install Docker and run tests"
       uses: adambirds/docker-compose-action@v1.5.0
       with:
