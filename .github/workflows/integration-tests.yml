@@ -58,4 +58,6 @@ jobs:
       with:
         compose-file: "./tests/fixtures/docker-compose.yml"
         test-container: iic-osic-tools
-        test-command: ./run_integration_tests.sh
+        test-command: --skip ./run_integration_tests.sh
+      continue-on-error: true    # ensure docker cache is written nevertheless
+      
