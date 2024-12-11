@@ -1,0 +1,63 @@
+##
+## --------------------------------------------------------------------------------
+## SPDX-FileCopyrightText: 2024 Martin Jan Köhler and Harald Pretl
+## Johannes Kepler University, Institute for Integrated Circuits.
+##
+## This file is part of KPEX 
+## (see https://github.com/martinjankoehler/klayout-pex).
+##
+## This program is free software: you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with this program. If not, see <http://www.gnu.org/licenses/>.
+## SPDX-License-Identifier: GPL-3.0-or-later
+## --------------------------------------------------------------------------------
+##
+
+name: "Integration tests on IIC-OSIC-TOOLS"
+
+on:
+  workflow_call:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - '.github/workflows/integration-tests.yml'
+
+jobs:
+  tests-inside-docker:
+    name: "Run tests"
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Generate Cache Key from Dockerfiles
+      id: generate_cache_key
+      run: |
+        files="./tests/fixtures/docker-compose.yml"
+        file_contents=$(cat $files)
+        key=$(echo "${file_contents}" | sha1sum | awk '{print $1}')
+        echo "key=${key}" >> "$GITHUB_OUTPUT"
+
+    - name: "Cache Docker images"
+      uses: ScribeMD/docker-cache@0.5.0
+      with:
+        key: docker-${{ runner.os }}-integration-tests-${{ steps.generate_cache_key.outputs.key }}
+        
+    - name: "Install Docker and run tests"
+      uses: adambirds/docker-compose-action@v1.5.0
+      with:
+        compose-file: "./tests/fixtures/docker-compose.yml"
+        test-container: iic-osic-tools
+        test-command: --skip ./run_integration_tests.sh
+      continue-on-error: true    # ensure docker cache is written nevertheless
+      
