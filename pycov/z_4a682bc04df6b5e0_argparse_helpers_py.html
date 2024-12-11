@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_4a682bc04df6b5e0_multiple_choice_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-10 18:14 +0000
+            created at 2024-12-11 15:47 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -114,10 +114,10 @@
     <p class="pln"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t">                     <span class="nam">enum_cls</span><span class="op">:</span> <span class="nam">Type</span><span class="op">[</span><span class="nam">Enum</span><span class="op">]</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t33" href="#t33">33</a></span><span class="t">                     <span class="nam">print_default</span><span class="op">:</span> <span class="nam">bool</span> <span class="op">=</span> <span class="key">True</span><span class="op">)</span> <span class="op">-></span> <span class="nam">str</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t34" href="#t34">34</a></span><span class="t">    <span class="key">if</span> <span class="key">not</span> <span class="nam">hasattr</span><span class="op">(</span><span class="nam">enum_cls</span><span class="op">,</span> <span class="str">'DEFAULT'</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t35" href="#t35">35</a></span><span class="t">        <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span><span class="str">"Enum must declare case 'DEFAULT'"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t35" href="#t35">35</a></span><span class="t">        <span class="nam">print_default</span> <span class="op">=</span> <span class="key">False</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t36" href="#t36">36</a></span><span class="t">    <span class="nam">enum_help</span> <span class="op">=</span> <span class="fst">f"</span><span class="op">{</span><span class="nam">topic</span><span class="op">}</span><span class="fst"> &#8712; </span><span class="op">{</span><span class="nam">set</span><span class="op">(</span><span class="op">[</span><span class="nam">name</span><span class="op">.</span><span class="nam">lower</span><span class="op">(</span><span class="op">)</span> <span class="key">for</span> <span class="nam">name</span><span class="op">,</span> <span class="nam">member</span> <span class="key">in</span> <span class="nam">enum_cls</span><span class="op">.</span><span class="nam">__members__</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">}</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t37" href="#t37">37</a></span><span class="t">    <span class="key">if</span> <span class="nam">print_default</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t38" href="#t38">38</a></span><span class="t">        <span class="nam">enum_help</span> <span class="op">+=</span> <span class="fst">f"</span><span class="fst">.\nDefaults to '</span><span class="op">{</span><span class="nam">enum_cls</span><span class="op">.</span><span class="nam">DEFAULT</span><span class="op">.</span><span class="nam">name</span><span class="op">.</span><span class="nam">lower</span><span class="op">(</span><span class="op">)</span><span class="op">}</span><span class="fst">'</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t38" href="#t38">38</a></span><span class="t">        <span class="nam">enum_help</span> <span class="op">+=</span> <span class="fst">f"</span><span class="fst">.\nDefaults to '</span><span class="op">{</span><span class="nam">getattr</span><span class="op">(</span><span class="nam">enum_cls</span><span class="op">,</span> <span class="str">'DEFAULT'</span><span class="op">)</span><span class="op">.</span><span class="nam">name</span><span class="op">.</span><span class="nam">lower</span><span class="op">(</span><span class="op">)</span><span class="op">}</span><span class="fst">'</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t39" href="#t39">39</a></span><span class="t">    <span class="key">return</span> <span class="nam">enum_help</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t40" href="#t40">40</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t41" href="#t41">41</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -141,7 +141,7 @@
             <a class="nav" href="z_4a682bc04df6b5e0_multiple_choice_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-10 18:14 +0000
+            created at 2024-12-11 15:47 +0000
         </p>
     </div>
 </footer>
