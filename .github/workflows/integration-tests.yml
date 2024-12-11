@@ -22,7 +22,7 @@
 ## --------------------------------------------------------------------------------
 ##
 
-name: Integration tests on IIC-OSIC-TOOLS
+name: "Integration tests on IIC-OSIC-TOOLS"
 
 on:
   workflow_call:
