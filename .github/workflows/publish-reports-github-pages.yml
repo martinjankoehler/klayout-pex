@@ -132,9 +132,12 @@ jobs:
         run: |
           coverage combine pycov-databases/*/python-coverage.sqlite
 
-      - name: "[🐍] Create coverage report"
-        run: |
-          coverage html --directory pycov --data-file=.coverage
+      - name: "[🐍] Create HTML coverage report"
+        run: >
+          coverage html 
+          --directory pycov 
+          --data-file=.coverage
+          --omit="*klayout_pex_protobuf/*_pb2.py"
 
       - name: "Display structure of coverage report"
         run: ls -R pycov
