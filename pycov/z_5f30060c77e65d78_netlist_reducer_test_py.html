@@ -64,8 +64,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="z_2dc81a3a091b1002_rcx25_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-17 17:24 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-13 18:34 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -137,10 +137,10 @@
     <p class="run"><span class="n"><a id="t55" href="#t55">55</a></span><span class="t">        <span class="nam">reducer</span> <span class="op">=</span> <span class="nam">NetlistReducer</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t56" href="#t56">56</a></span><span class="t">        <span class="nam">reduced_netlist</span> <span class="op">=</span> <span class="nam">reducer</span><span class="op">.</span><span class="nam">reduce</span><span class="op">(</span><span class="nam">netlist</span><span class="op">=</span><span class="nam">netlist</span><span class="op">,</span> <span class="nam">top_cell_name</span><span class="op">=</span><span class="nam">cell_name</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t57" href="#t57">57</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t58" href="#t58">58</a></span><span class="t">        <span class="nam">out_path</span> <span class="op">=</span> <span class="nam">tempfile</span><span class="op">.</span><span class="nam">mktemp</span><span class="op">(</span><span class="nam">prefix</span><span class="op">=</span><span class="str">f"{cell_name}_Reduced_Netlist_"</span><span class="op">,</span> <span class="nam">suffix</span><span class="op">=</span><span class="str">".cir"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t58" href="#t58">58</a></span><span class="t">        <span class="nam">out_path</span> <span class="op">=</span> <span class="nam">tempfile</span><span class="op">.</span><span class="nam">mktemp</span><span class="op">(</span><span class="nam">prefix</span><span class="op">=</span><span class="fst">f"</span><span class="op">{</span><span class="nam">cell_name</span><span class="op">}</span><span class="fst">_Reduced_Netlist_</span><span class="fst">"</span><span class="op">,</span> <span class="nam">suffix</span><span class="op">=</span><span class="str">".cir"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t59" href="#t59">59</a></span><span class="t">        <span class="nam">spice_writer</span> <span class="op">=</span> <span class="nam">kdb</span><span class="op">.</span><span class="nam">NetlistSpiceWriter</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t60" href="#t60">60</a></span><span class="t">        <span class="nam">reduced_netlist</span><span class="op">.</span><span class="nam">write</span><span class="op">(</span><span class="nam">out_path</span><span class="op">,</span> <span class="nam">spice_writer</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t61" href="#t61">61</a></span><span class="t">        <span class="nam">print</span><span class="op">(</span><span class="str">f"Wrote reduced netlist to: {out_path}"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t61" href="#t61">61</a></span><span class="t">        <span class="nam">print</span><span class="op">(</span><span class="fst">f"</span><span class="fst">Wrote reduced netlist to: </span><span class="op">{</span><span class="nam">out_path</span><span class="op">}</span><span class="fst">"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t62" href="#t62">62</a></span><span class="t">        <span class="nam">allure</span><span class="op">.</span><span class="nam">attach</span><span class="op">.</span><span class="nam">file</span><span class="op">(</span><span class="nam">out_path</span><span class="op">,</span> <span class="nam">attachment_type</span><span class="op">=</span><span class="nam">allure</span><span class="op">.</span><span class="nam">attachment_type</span><span class="op">.</span><span class="nam">TEXT</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t63" href="#t63">63</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t64" href="#t64">64</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_netlist_reduction_1</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
@@ -158,8 +158,8 @@
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a class="nav" href="z_2dc81a3a091b1002_rcx25_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-17 17:24 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-13 18:34 +0000
         </p>
     </div>
 </footer>

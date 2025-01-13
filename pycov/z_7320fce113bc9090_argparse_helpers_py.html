@@ -64,8 +64,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="z_7320fce113bc9090_multiple_choice_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-17 17:24 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-13 18:34 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -122,8 +122,8 @@
     <p class="run"><span class="n"><a id="t40" href="#t40">40</a></span><span class="t">        <span class="key">return</span> <span class="nam">name</span><span class="op">.</span><span class="nam">lower</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t41" href="#t41">41</a></span><span class="t">    <span class="key">if</span> <span class="key">not</span> <span class="nam">hasattr</span><span class="op">(</span><span class="nam">enum_cls</span><span class="op">,</span> <span class="str">'DEFAULT'</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t42" href="#t42">42</a></span><span class="t">        <span class="nam">print_default</span> <span class="op">=</span> <span class="key">False</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t43" href="#t43">43</a></span><span class="t">    <span class="nam">case_list</span> <span class="op">=</span> <span class="op">[</span><span class="str">f"'{canonic_string(name, member)}'"</span> <span class="key">for</span> <span class="nam">name</span><span class="op">,</span> <span class="nam">member</span> <span class="key">in</span> <span class="nam">enum_cls</span><span class="op">.</span><span class="nam">__members__</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t44" href="#t44">44</a></span><span class="t">    <span class="nam">enum_help</span> <span class="op">=</span> <span class="str">f"{topic} &#8712; \u007b{', '.join(case_list)}\u007d"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t43" href="#t43">43</a></span><span class="t">    <span class="nam">case_list</span> <span class="op">=</span> <span class="op">[</span><span class="fst">f"</span><span class="fst">'</span><span class="op">{</span><span class="nam">canonic_string</span><span class="op">(</span><span class="nam">name</span><span class="op">,</span> <span class="nam">member</span><span class="op">)</span><span class="op">}</span><span class="fst">'</span><span class="fst">"</span> <span class="key">for</span> <span class="nam">name</span><span class="op">,</span> <span class="nam">member</span> <span class="key">in</span> <span class="nam">enum_cls</span><span class="op">.</span><span class="nam">__members__</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t44" href="#t44">44</a></span><span class="t">    <span class="nam">enum_help</span> <span class="op">=</span> <span class="fst">f"</span><span class="op">{</span><span class="nam">topic</span><span class="op">}</span><span class="fst"> &#8712; \u007b</span><span class="op">{</span><span class="str">', '</span><span class="op">.</span><span class="nam">join</span><span class="op">(</span><span class="nam">case_list</span><span class="op">)</span><span class="op">}</span><span class="fst">\u007d</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t45" href="#t45">45</a></span><span class="t">    <span class="key">if</span> <span class="nam">print_default</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t46" href="#t46">46</a></span><span class="t">        <span class="nam">default_case</span><span class="op">:</span> <span class="nam">enum_cls</span> <span class="op">=</span> <span class="nam">getattr</span><span class="op">(</span><span class="nam">enum_cls</span><span class="op">,</span> <span class="str">'DEFAULT'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t47" href="#t47">47</a></span><span class="t">        <span class="key">if</span> <span class="nam">issubclass</span><span class="op">(</span><span class="nam">enum_cls</span><span class="op">,</span> <span class="nam">StrEnum</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
@@ -132,7 +132,7 @@
     <p class="run"><span class="n"><a id="t50" href="#t50">50</a></span><span class="t">                <span class="nam">default_value</span> <span class="op">=</span> <span class="nam">default_value</span><span class="op">.</span><span class="nam">lower</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t51" href="#t51">51</a></span><span class="t">        <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t52" href="#t52">52</a></span><span class="t">            <span class="nam">default_value</span> <span class="op">=</span> <span class="nam">default_case</span><span class="op">.</span><span class="nam">name</span><span class="op">.</span><span class="nam">lower</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t53" href="#t53">53</a></span><span class="t">        <span class="nam">enum_help</span> <span class="op">+=</span> <span class="str">f".\nDefaults to '{default_value}'"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t53" href="#t53">53</a></span><span class="t">        <span class="nam">enum_help</span> <span class="op">+=</span> <span class="fst">f"</span><span class="fst">.\nDefaults to '</span><span class="op">{</span><span class="nam">default_value</span><span class="op">}</span><span class="fst">'</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t54" href="#t54">54</a></span><span class="t">    <span class="key">return</span> <span class="nam">enum_help</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t55" href="#t55">55</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t56" href="#t56">56</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -155,8 +155,8 @@
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a class="nav" href="z_7320fce113bc9090_multiple_choice_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-17 17:24 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-13 18:34 +0000
         </p>
     </div>
 </footer>
