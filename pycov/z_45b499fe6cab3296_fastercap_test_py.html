@@ -64,8 +64,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="z_5f30060c77e65d78_lvs_runner_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-17 17:24 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-14 18:11 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -144,7 +144,7 @@
     <p class="run"><span class="n"><a id="t62" href="#t62">62</a></span><span class="t"><span class="key">def</span> <span class="nam">_save_layout_preview</span><span class="op">(</span><span class="nam">gds_path</span><span class="op">:</span> <span class="nam">str</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t63" href="#t63">63</a></span><span class="t">                         <span class="nam">output_png_path</span><span class="op">:</span> <span class="nam">str</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t64" href="#t64">64</a></span><span class="t">    <span class="nam">kdb</span><span class="op">.</span><span class="nam">Technology</span><span class="op">.</span><span class="nam">clear_technologies</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t65" href="#t65">65</a></span><span class="t">    <span class="nam">default_lyt_path</span> <span class="op">=</span> <span class="nam">os</span><span class="op">.</span><span class="nam">path</span><span class="op">.</span><span class="nam">abspath</span><span class="op">(</span><span class="str">f"{_kpex_pdk_dir()}/sky130A.lyt"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t65" href="#t65">65</a></span><span class="t">    <span class="nam">default_lyt_path</span> <span class="op">=</span> <span class="nam">os</span><span class="op">.</span><span class="nam">path</span><span class="op">.</span><span class="nam">abspath</span><span class="op">(</span><span class="fst">f"</span><span class="op">{</span><span class="nam">_kpex_pdk_dir</span><span class="op">(</span><span class="op">)</span><span class="op">}</span><span class="fst">/sky130A.lyt</span><span class="fst">"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t66" href="#t66">66</a></span><span class="t">    <span class="nam">tech</span> <span class="op">=</span> <span class="nam">kdb</span><span class="op">.</span><span class="nam">Technology</span><span class="op">.</span><span class="nam">create_technology</span><span class="op">(</span><span class="str">'sky130A'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t67" href="#t67">67</a></span><span class="t">    <span class="nam">tech</span><span class="op">.</span><span class="nam">load</span><span class="op">(</span><span class="nam">default_lyt_path</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t68" href="#t68">68</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -166,7 +166,7 @@
     <p class="run"><span class="n"><a id="t84" href="#t84">84</a></span><span class="t"><span class="key">def</span> <span class="nam">_extract_single_cell</span><span class="op">(</span><span class="op">*</span><span class="nam">path_components</span><span class="op">)</span> <span class="op">-></span> <span class="nam">Tuple</span><span class="op">[</span><span class="nam">CSVPath</span><span class="op">,</span> <span class="nam">PNGPath</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t85" href="#t85">85</a></span><span class="t">    <span class="nam">gds_path</span> <span class="op">=</span> <span class="nam">_gds</span><span class="op">(</span><span class="op">*</span><span class="nam">path_components</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t86" href="#t86">86</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t87" href="#t87">87</a></span><span class="t">    <span class="nam">preview_png_path</span> <span class="op">=</span> <span class="nam">tempfile</span><span class="op">.</span><span class="nam">mktemp</span><span class="op">(</span><span class="nam">prefix</span><span class="op">=</span><span class="str">f"layout_preview_"</span><span class="op">,</span> <span class="nam">suffix</span><span class="op">=</span><span class="str">".png"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t87" href="#t87">87</a></span><span class="t">    <span class="nam">preview_png_path</span> <span class="op">=</span> <span class="nam">tempfile</span><span class="op">.</span><span class="nam">mktemp</span><span class="op">(</span><span class="nam">prefix</span><span class="op">=</span><span class="fst">f"</span><span class="fst">layout_preview_</span><span class="fst">"</span><span class="op">,</span> <span class="nam">suffix</span><span class="op">=</span><span class="str">".png"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t88" href="#t88">88</a></span><span class="t">    <span class="nam">_save_layout_preview</span><span class="op">(</span><span class="nam">gds_path</span><span class="op">,</span> <span class="nam">preview_png_path</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t89" href="#t89">89</a></span><span class="t">    <span class="nam">output_dir_path</span> <span class="op">=</span> <span class="nam">os</span><span class="op">.</span><span class="nam">path</span><span class="op">.</span><span class="nam">realpath</span><span class="op">(</span><span class="nam">os</span><span class="op">.</span><span class="nam">path</span><span class="op">.</span><span class="nam">join</span><span class="op">(</span><span class="nam">__file__</span><span class="op">,</span> <span class="str">'..'</span><span class="op">,</span> <span class="str">'..'</span><span class="op">,</span> <span class="str">'..'</span><span class="op">,</span> <span class="str">'output_sky130A'</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t90" href="#t90">90</a></span><span class="t">    <span class="nam">cli</span> <span class="op">=</span> <span class="nam">KpexCLI</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -222,8 +222,8 @@
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a class="nav" href="z_5f30060c77e65d78_lvs_runner_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.9">coverage.py v7.6.9</a>,
-            created at 2024-12-17 17:24 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-14 18:11 +0000
         </p>
     </div>
 </footer>
