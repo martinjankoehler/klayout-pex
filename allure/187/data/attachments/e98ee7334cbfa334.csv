@@ -1,0 +1,6 @@
+Device;Net1;Net2;Capacitance [fF]
+C1;C;VSUBS;11.92  # TODO: magic=8.231f 
+C2;A;VSUBS;11.92  # TODO: magic=8.231f
+C3;B;VSUBS;11.92  # TODO: magic=4.452f
+C4;B;C;7.5
+C5;A;B;7.5
