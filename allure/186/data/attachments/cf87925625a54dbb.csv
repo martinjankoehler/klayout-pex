@@ -1,0 +1,9 @@
+Device;Net1;Net2;Capacitance [fF]
+C1;VSUBS;li1;386.18
+C2;li1;met1;294.592
+C3;VSUBS;met1;205.52
+C4;met1;met2;680.482
+C5;li1;met2;99.015
+C6;VSUBS;met2;51.302
+C7;VSUBS;met3;135.996
+C8;li1;met3;5.031

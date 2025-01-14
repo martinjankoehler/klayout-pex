@@ -1,0 +1,7 @@
+1 row changed
+
+  None: C3
+    Capacitance [fF]: "0.019 TODO, MAGIC=1.87386 fF" => "0.019"
+  extras:
+    Net1: C0
+    Net2: C1
