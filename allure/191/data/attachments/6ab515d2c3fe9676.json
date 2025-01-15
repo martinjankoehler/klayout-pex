@@ -1,0 +1,17 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.019 TODO, MAGIC=1.87386 fF",
+                    "0.019"
+                ]
+            },
+            "key": "C3"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}
