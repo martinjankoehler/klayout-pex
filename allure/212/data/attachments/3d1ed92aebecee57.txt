@@ -1,0 +1,60 @@
+──────────────────────────── Command line arguments ────────────────────────────
+/home/runner/work/klayout-pex/klayout-pex/.venv/lib/python3.12/site-packages/pyt
+est/__main__.py -m slow --alluredir build/allure-results --color no             
+───────────────────────────────── Input Layout ─────────────────────────────────
+[16:34:08] INFO     GDS input file passed, running in LVS mode   kpex_cli.py:282
+[16:34:08] INFO     No explicit top cell specified, using top    kpex_cli.py:318
+                    cell                                                        
+                    'sidewall_100um_x_100um_distance_200nm_li1'                 
+[16:34:08] INFO     LVS input schematic not specified (argument  kpex_cli.py:365
+                    --schematic), using dummy schematic                         
+──────────────────────────────── Prepare LVSDB ─────────────────────────────────
+[16:34:08] INFO     Cache miss: extracted LVSDB is older than    kpex_cli.py:700
+                    the input GDS                                               
+/home/runner/work/klayout-pex/klayout-pex/output_sky130A/.kpex_cache/sky130A/hom
+e/runner/work/klayout-pex/klayout-pex/testdata/designs/sky130A/test_patterns/sid
+ewall_100um_x_100um_distance_200nm_li1.gds.gz/sidewall_100um_x_100um_distance_20
+0nm_li1.lvsdb.gz                                                                
+[16:34:08] INFO     Calling klayout -b -r                       lvs_runner.py:70
+                    /home/runner/work/klayout-pex/klayout-pex/k                 
+                    layout_pex/pdk/sky130A/libs.tech/kpex/sky13                 
+                    0.lvs -rd                                                   
+                    input=/home/runner/work/klayout-pex/klayout                 
+                    -pex/testdata/designs/sky130A/test_patterns                 
+                    /sidewall_100um_x_100um_distance_200nm_li1.                 
+                    gds.gz -rd                                                  
+                    report=/home/runner/work/klayout-pex/klayou                 
+                    t-pex/output_sky130A/sidewall_100um_x_100um                 
+                    _distance_200nm_li1__sidewall_100um_x_100um                 
+                    _distance_200nm_li1/sidewall_100um_x_100um_                 
+                    distance_200nm_li1.lvsdb.gz -rd                             
+                    schematic=/home/runner/work/klayout-pex/kla                 
+                    yout-pex/output_sky130A/sidewall_100um_x_10                 
+                    0um_distance_200nm_li1__sidewall_100um_x_10                 
+                    0um_distance_200nm_li1/sidewall_100um_x_100                 
+                    um_distance_200nm_li1_dummy_schematic.spice                 
+                     -rd thr=22 -rd run_mode=deep -rd                           
+                    spice_net_names=true -rd                                    
+                    spice_comments=false -rd scale=false -rd                    
+                    verbose=true -rd schematic_simplify=false                   
+                    -rd net_only=false -rd top_lvl_pins=true                    
+                    -rd combine=false -rd combine_devices=false                 
+                    -rd purge=false -rd purge_nets=false -rd                    
+                    no_simplify=true, output file:                              
+                    /home/runner/work/klayout-pex/klayout-pex/o                 
+                    utput_sky130A/sidewall_100um_x_100um_distan                 
+                    ce_200nm_li1__sidewall_100um_x_100um_distan                 
+                    ce_200nm_li1/sidewall_100um_x_100um_distanc                 
+                    e_200nm_li1_lvs.log                                         
+────────────────────────────────────────────────────────────────────────────────
+ERROR: Unable to open file:                                                     
+/home/runner/work/klayout-pex/klayout-pex/klayout_pex//pdk/sky130A/libs.tech/kpe
+x/sky130.lvs (errno=2)                                                          
+────────────────────────────────────────────────────────────────────────────────
+[16:34:09] WARNING  klayout LVS failed with status code 1 after lvs_runner.py:96
+                    1.513s, see log file:                                       
+                    /home/runner/work/klayout-pex/klayout-pex/o                 
+                    utput_sky130A/sidewall_100um_x_100um_distan                 
+                    ce_200nm_li1__sidewall_100um_x_100um_distan                 
+                    ce_200nm_li1/sidewall_100um_x_100um_distanc                 
+                    e_200nm_li1_lvs.log                                         

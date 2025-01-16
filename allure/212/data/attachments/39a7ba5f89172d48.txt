@@ -1,0 +1,55 @@
+──────────────────────────── Command line arguments ────────────────────────────
+/home/runner/work/klayout-pex/klayout-pex/.venv/lib/python3.12/site-packages/pyt
+est/__main__.py -m slow --alluredir build/allure-results --color no             
+───────────────────────────────── Input Layout ─────────────────────────────────
+[16:34:15] INFO     GDS input file passed, running in LVS mode   kpex_cli.py:282
+[16:34:15] INFO     No explicit top cell specified, using top    kpex_cli.py:318
+                    cell 'sideoverlap_simple_plates_li1_m1'                     
+[16:34:15] INFO     LVS input schematic not specified (argument  kpex_cli.py:365
+                    --schematic), using dummy schematic                         
+──────────────────────────────── Prepare LVSDB ─────────────────────────────────
+[16:34:15] INFO     Cache miss: extracted LVSDB is older than    kpex_cli.py:700
+                    the input GDS                                               
+/home/runner/work/klayout-pex/klayout-pex/output_sky130A/.kpex_cache/sky130A/hom
+e/runner/work/klayout-pex/klayout-pex/testdata/designs/sky130A/test_patterns/sid
+eoverlap_simple_plates_li1_m1.gds.gz/sideoverlap_simple_plates_li1_m1.lvsdb.gz  
+[16:34:15] INFO     Calling klayout -b -r                       lvs_runner.py:70
+                    /home/runner/work/klayout-pex/klayout-pex/k                 
+                    layout_pex/pdk/sky130A/libs.tech/kpex/sky13                 
+                    0.lvs -rd                                                   
+                    input=/home/runner/work/klayout-pex/klayout                 
+                    -pex/testdata/designs/sky130A/test_patterns                 
+                    /sideoverlap_simple_plates_li1_m1.gds.gz                    
+                    -rd                                                         
+                    report=/home/runner/work/klayout-pex/klayou                 
+                    t-pex/output_sky130A/sideoverlap_simple_pla                 
+                    tes_li1_m1__sideoverlap_simple_plates_li1_m                 
+                    1/sideoverlap_simple_plates_li1_m1.lvsdb.gz                 
+                     -rd                                                        
+                    schematic=/home/runner/work/klayout-pex/kla                 
+                    yout-pex/output_sky130A/sideoverlap_simple_                 
+                    plates_li1_m1__sideoverlap_simple_plates_li                 
+                    1_m1/sideoverlap_simple_plates_li1_m1_dummy                 
+                    _schematic.spice -rd thr=22 -rd                             
+                    run_mode=deep -rd spice_net_names=true -rd                  
+                    spice_comments=false -rd scale=false -rd                    
+                    verbose=true -rd schematic_simplify=false                   
+                    -rd net_only=false -rd top_lvl_pins=true                    
+                    -rd combine=false -rd combine_devices=false                 
+                    -rd purge=false -rd purge_nets=false -rd                    
+                    no_simplify=true, output file:                              
+                    /home/runner/work/klayout-pex/klayout-pex/o                 
+                    utput_sky130A/sideoverlap_simple_plates_li1                 
+                    _m1__sideoverlap_simple_plates_li1_m1/sideo                 
+                    verlap_simple_plates_li1_m1_lvs.log                         
+────────────────────────────────────────────────────────────────────────────────
+ERROR: Unable to open file:                                                     
+/home/runner/work/klayout-pex/klayout-pex/klayout_pex//pdk/sky130A/libs.tech/kpe
+x/sky130.lvs (errno=2)                                                          
+────────────────────────────────────────────────────────────────────────────────
+[16:34:17] WARNING  klayout LVS failed with status code 1 after lvs_runner.py:96
+                    1.515s, see log file:                                       
+                    /home/runner/work/klayout-pex/klayout-pex/o                 
+                    utput_sky130A/sideoverlap_simple_plates_li1                 
+                    _m1__sideoverlap_simple_plates_li1_m1/sideo                 
+                    verlap_simple_plates_li1_m1_lvs.log                         
