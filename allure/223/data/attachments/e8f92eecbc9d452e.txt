@@ -1,0 +1,1 @@
+averaged matrix stored in /tmp/fastercap_matrix_avg__rb21n096.csv
