@@ -1,0 +1,19 @@
+1 row changed, 1 row added
+
+1 row changed
+
+  None: Cext_0_1
+    Capacitance [fF]: "386.18" => "400.2"
+  extras:
+    Net1: VSUBS
+    Net2: PLATE
+
+1 row added
+
+  Device: Cext_1_1
+  Net1: PLATE
+  Net2: VSUBS
+  Capacitance [fF]: 14.57
+  extras:
+    Net1: PLATE
+    Net2: VSUBS
