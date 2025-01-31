@@ -1,0 +1,111 @@
+──────────────────────────── Command line arguments ────────────────────────────
+/home/runner/work/klayout-pex/klayout-pex/.venv/lib/python3.12/site-packages/pyt
+est/__main__.py -m slow --alluredir build/allure-results --color no             
+───────────────────────────────── Input Layout ─────────────────────────────────
+[18:59:52] INFO     GDS input file passed, running in LVS mode   kpex_cli.py:297
+[18:59:52] INFO     No explicit top cell specified, using top    kpex_cli.py:333
+                    cell                                                        
+                    'single_plate_100um_x_100um_li1_over_substra                
+                    te'                                                         
+[18:59:52] INFO     LVS input schematic not specified (argument  kpex_cli.py:380
+                    --schematic), using dummy schematic                         
+──────────────────────────────── Prepare LVSDB ─────────────────────────────────
+[18:59:52] WARNING  Cache hit: Reusing cached LVSDB              kpex_cli.py:719
+/home/runner/work/klayout-pex/klayout-pex/output_sky130A/.kpex_cache/sky130A/hom
+e/runner/work/klayout-pex/klayout-pex/testdata/designs/sky130A/test_patterns/sin
+gle_plate_100um_x_100um_li1_over_substrate.gds.gz/single_plate_100um_x_100um_li1
+_over_substrate.lvsdb.gz                                                        
+1 - gds_pair = None
+1 - gds_pair = (64, 18)
+1 - gds_pair = (64, 20)
+1 - gds_pair = None
+1 - gds_pair = (66, 44)
+1 - gds_pair = (67, 44)
+1 - gds_pair = (68, 44)
+1 - gds_pair = (69, 44)
+1 - gds_pair = None
+1 - gds_pair = (89, 44)
+1 - gds_pair = (97, 44)
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1a - gds_pair = (67, 5)   not found as computed!
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = (93, 44)
+1 - gds_pair = (65, 244)
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = (94, 20)
+1 - gds_pair = None
+1 - gds_pair = (65, 144)
+1 - gds_pair = None
+1 - gds_pair = (66, 20)
+1 - gds_pair = None
+1 - gds_pair = (67, 20)
+1 - gds_pair = (68, 20)
+1 - gds_pair = (69, 20)
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = (72, 20)
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = (70, 20)
+1 - gds_pair = (70, 220)
+1 - gds_pair = (70, 144)
+1 - gds_pair = (70, 244)
+1 - gds_pair = (71, 20)
+1 - gds_pair = (71, 220)
+1 - gds_pair = (71, 144)
+1 - gds_pair = (71, 244)
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = None
+1 - gds_pair = (66, 20)
+1 - gds_pair = (67, 20)
+1 - gds_pair = (68, 20)
+1 - gds_pair = (69, 20)
+1 - gds_pair = (70, 20)
+1 - gds_pair = (71, 20)
+1 - gds_pair = (72, 20)
+1 - gds_pair = (66, 44)
+1 - gds_pair = (67, 44)
+1 - gds_pair = (68, 44)
+1 - gds_pair = (69, 44)
+1 - gds_pair = (70, 44)
+1 - gds_pair = (71, 44)
+─────────────────────── Non-empty layers in LVS database ───────────────────────
+[18:59:52] INFO     (67, 20) -> (li_con)                         kpex_cli.py:774
+───────────────────────────── kpex/2.5D PEX Engine ─────────────────────────────
