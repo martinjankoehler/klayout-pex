@@ -1,0 +1,6 @@
+Device;Net1;Net2;Capacitance [fF]
+C1;C;VSUBS;11.92
+C2;A;VSUBS;11.92
+C3;B;VSUBS;11.92
+C4;B;C;7.5
+C5;A;B;7.5
