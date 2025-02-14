@@ -54,8 +54,8 @@
             </div>
         </aside>
         <h2>
-            <span class="text">62 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">62<span class="text"> run</span></button>
+            <span class="text">63 statements &nbsp;</span>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">63<span class="text"> run</span></button>
             <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">0<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
@@ -64,8 +64,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="z_5f30060c77e65d78_lvs_runner_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
-            created at 2025-02-05 15:37 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.12">coverage.py v7.6.12</a>,
+            created at 2025-02-14 17:01 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -206,14 +206,15 @@
     <p class="run"><span class="n"><a id="t124" href="#t124">124</a></span><span class="t"><span class="op">@</span><span class="nam">allure</span><span class="op">.</span><span class="nam">parent_suite</span><span class="op">(</span><span class="nam">parent_suite</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t125" href="#t125">125</a></span><span class="t"><span class="op">@</span><span class="nam">allure</span><span class="op">.</span><span class="nam">tag</span><span class="op">(</span><span class="op">*</span><span class="nam">tags</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t126" href="#t126">126</a></span><span class="t"><span class="op">@</span><span class="nam">pytest</span><span class="op">.</span><span class="nam">mark</span><span class="op">.</span><span class="nam">slow</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t127" href="#t127">127</a></span><span class="t"><span class="key">def</span> <span class="nam">test_single_plate_100um_x_100um_li1_over_substrate</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t128" href="#t128">128</a></span><span class="t">    <span class="com">#_______________________________ NOTE: with halo=8&#181;m __________________________________</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t129" href="#t129">129</a></span><span class="t">    <span class="com"># C0 PLATE VSUBS 0.38618p</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t130" href="#t130">130</a></span><span class="t">    <span class="nam">assert_expected_matches_obtained</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t131" href="#t131">131</a></span><span class="t">        <span class="str">'test_patterns'</span><span class="op">,</span> <span class="str">'single_plate_100um_x_100um_li1_over_substrate.gds.gz'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t132" href="#t132">132</a></span><span class="t">        <span class="nam">expected_csv_content</span><span class="op">=</span><span class="str">"""Device;Net1;Net2;Capacitance [fF]</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t133" href="#t133">133</a></span><span class="t"><span class="str">Cext_0_1;VSUBS;PLATE;386.18"""</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t134" href="#t134">134</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t127" href="#t127">127</a></span><span class="t"><span class="op">@</span><span class="nam">pytest</span><span class="op">.</span><span class="nam">mark</span><span class="op">.</span><span class="nam">fastercap</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t128" href="#t128">128</a></span><span class="t"><span class="key">def</span> <span class="nam">test_single_plate_100um_x_100um_li1_over_substrate</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t129" href="#t129">129</a></span><span class="t">    <span class="com">#_______________________________ NOTE: with halo=8&#181;m __________________________________</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t130" href="#t130">130</a></span><span class="t">    <span class="com"># C0 PLATE VSUBS 0.38618p</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t131" href="#t131">131</a></span><span class="t">    <span class="nam">assert_expected_matches_obtained</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t132" href="#t132">132</a></span><span class="t">        <span class="str">'test_patterns'</span><span class="op">,</span> <span class="str">'single_plate_100um_x_100um_li1_over_substrate.gds.gz'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t133" href="#t133">133</a></span><span class="t">        <span class="nam">expected_csv_content</span><span class="op">=</span><span class="str">"""Device;Net1;Net2;Capacitance [fF]</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t134" href="#t134">134</a></span><span class="t"><span class="str">Cext_0_1;VSUBS;PLATE;386.18"""</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t135" href="#t135">135</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -222,8 +223,8 @@
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a class="nav" href="z_5f30060c77e65d78_lvs_runner_test_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
-            created at 2025-02-05 15:37 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.12">coverage.py v7.6.12</a>,
+            created at 2025-02-14 17:01 +0000
         </p>
     </div>
 </footer>
