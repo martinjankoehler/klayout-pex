@@ -1,0 +1,24 @@
+{
+    "added": [
+        {
+            "Capacitance [fF]": "14.57",
+            "Device": "Cext_1_1",
+            "Net1": "PLATE",
+            "Net2": "VSUBS"
+        }
+    ],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "386.18",
+                    "400.2"
+                ]
+            },
+            "key": "Cext_0_1"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}
