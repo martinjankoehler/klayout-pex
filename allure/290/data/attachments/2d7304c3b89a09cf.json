@@ -1,0 +1,17 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.125 TODO",
+                    "0.125"
+                ]
+            },
+            "key": "C3"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}
