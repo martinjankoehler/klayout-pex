@@ -1,0 +1,19 @@
+3 rows changed
+
+  None: C1
+    Capacitance [fF]: "11.92  # TODO: magic=8.231f " => "11.92"
+  extras:
+    Net1: C
+    Net2: VSUBS
+
+  None: C2
+    Capacitance [fF]: "11.92  # TODO: magic=8.231f" => "11.92"
+  extras:
+    Net1: A
+    Net2: VSUBS
+
+  None: C3
+    Capacitance [fF]: "11.92  # TODO: magic=4.452f" => "11.92"
+  extras:
+    Net1: B
+    Net2: VSUBS

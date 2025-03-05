@@ -1,0 +1,7 @@
+1 row changed
+
+  None: C3
+    Capacitance [fF]: "0.125 TODO" => "0.125"
+  extras:
+    Net1: li1
+    Net2: met1
