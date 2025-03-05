@@ -311,4 +311,20 @@ class KLayoutExtractionContext:
 
         return shapes
 
+    def pins_of_layer(self, gds_pair: GDSPair) -> kdb.Region:
+        lyr = self.extracted_layers.get(gds_pair, None)
+        if lyr is None:
+            return kdb.Region()
 
+        pins: kdb.Region
+        return None
+
+    def labels_of_layer(self, gds_pair: GDSPair) -> kdb.Texts:
+        lyr = self.extracted_layers.get(gds_pair, None)
+        if lyr is None:
+            return kdb.Texts()
+
+        # self.original_layout
+
+        labels: kdb.Texts
+        return None
