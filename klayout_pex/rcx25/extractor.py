@@ -25,26 +25,37 @@
 
 import klayout.db as kdb
 
+from .r.conductance import Conductance
 from ..klayout.lvsdb_extractor import KLayoutExtractionContext, GDSPair
 from ..log import (
     debug,
-    warning
+    warning,
+    info,
+    subproc
 )
 from ..tech_info import TechInfo
 from .extraction_results import *
 from .extraction_reporter import ExtractionReporter
+from .pex_mode import PEXMode
 from klayout_pex.rcx25.c.overlap_extractor import OverlapExtractor
 from klayout_pex.rcx25.c.sidewall_and_fringe_extractor import SidewallAndFringeExtractor
+from .r.resistor_extraction import ResistorExtraction, ResistorNetwork
 
 
 class RCExtractor:
     def __init__(self,
                  pex_context: KLayoutExtractionContext,
+                 pex_mode: PEXMode,
                  scale_ratio_to_fit_halo: bool,
+                 delaunay_amax: float,
+                 delaunay_b: float,
                  tech_info: TechInfo,
                  report_path: str):
         self.pex_context = pex_context
+        self.pex_mode = pex_mode
         self.scale_ratio_to_fit_halo = scale_ratio_to_fit_halo
+        self.delaunay_amax = delaunay_amax
+        self.delaunay_b = delaunay_b
         self.tech_info = tech_info
         self.report_path = report_path
 
@@ -106,7 +117,7 @@ class RCExtractor:
         side_halo_um = self.tech_info.tech.process_parasitics.side_halo
         substrate_region.insert(self.pex_context.top_cell_bbox().enlarged(side_halo_um / dbu))  # e.g. 8 µm halo
 
-        layer_regions_by_name[ self.tech_info.internal_substrate_layer_name] = substrate_region
+        layer_regions_by_name[self.tech_info.internal_substrate_layer_name] = substrate_region
 
         for metal_layer in self.tech_info.process_metal_layers:
             layer_name = metal_layer.name
@@ -125,25 +136,72 @@ class RCExtractor:
 
         all_layer_names = list(layer_regions_by_name.keys())
 
-        overlap_extractor = OverlapExtractor(
-            all_layer_names=all_layer_names,
-            layer_regions_by_name=layer_regions_by_name,
-            dbu=dbu,
-            tech_info=self.tech_info,
-            results=results,
-            report=report
-        )
-        overlap_extractor.extract()
+        # ------------------------------------------------------------------------
+        if self.pex_mode.need_capacitance():
+            overlap_extractor = OverlapExtractor(
+                all_layer_names=all_layer_names,
+                layer_regions_by_name=layer_regions_by_name,
+                dbu=dbu,
+                tech_info=self.tech_info,
+                results=results,
+                report=report
+            )
+            overlap_extractor.extract()
 
-        sidewall_and_fringe_extractor = SidewallAndFringeExtractor(
-            all_layer_names=all_layer_names,
-            layer_regions_by_name=layer_regions_by_name,
-            dbu=dbu,
-            scale_ratio_to_fit_halo=self.scale_ratio_to_fit_halo,
-            tech_info=self.tech_info,
-            results=results,
-            report=report
-        )
-        sidewall_and_fringe_extractor.extract()
+            sidewall_and_fringe_extractor = SidewallAndFringeExtractor(
+                all_layer_names=all_layer_names,
+                layer_regions_by_name=layer_regions_by_name,
+                dbu=dbu,
+                scale_ratio_to_fit_halo=self.scale_ratio_to_fit_halo,
+                tech_info=self.tech_info,
+                results=results,
+                report=report
+            )
+            sidewall_and_fringe_extractor.extract()
+
+        # ------------------------------------------------------------------------
+        if self.pex_mode.need_resistance():
+            rex = ResistorExtraction(b=self.delaunay_b, amax=self.delaunay_amax)
+
+            c: kdb.Circuit = netlist.top_circuit()
+            debug(f"found {c.pin_count()}pins")
+
+            for layer_name, region in layer_regions_by_name.items():
+                if layer_name == self.tech_info.internal_substrate_layer_name:
+                    continue
+
+                gds_pair = self.gds_pair(layer_name)
+                pins = self.pex_context.pins_of_layer(gds_pair)
+                labels = self.pex_context.labels_of_layer(gds_pair)
+
+                layer_sheet_resistance = self.tech_info.layer_resistance_by_layer_name[layer_name]
+
+                # TODO: include vias into graph!!!
+
+                resistor_networks = rex.extract(polygons=region, pins=pins, labels=labels)
+
+                subproc(f"Layer {layer_name}   (R_coeff = {layer_sheet_resistance.resistance}):")
+                for rn in resistor_networks:
+                    # print(rn.to_string(True))
+                    subproc("\tNodes:")
+                    for node_id in rn.node_to_s.keys():
+                        loc = rn.locations[node_id]
+                        node_name = rn.node_names[node_id]
+                        subproc(f"\t\tNode {node_name} at {loc} ({loc.x * dbu} µm, {loc.y * dbu} µm)")
+
+                    subproc("\tResistors:")
+                    visited_resistors: Set[Conductance] = set()
+                    for node_id, resistors in rn.node_to_s.items():
+                        node_name = rn.node_names[node_id]
+                        for conductance, other_node_id in resistors:
+                            if conductance in visited_resistors:
+                                continue # we don't want to add it twice, only once per direction!
+                            visited_resistors.add(conductance)
+
+                            other_node_name = rn.node_names[other_node_id]
+                            ohm = layer_sheet_resistance.resistance / 1000.0 / conductance.cond
+                            # TODO: layer_sheet_resistance.corner_adjustment_fraction not yet used !!!
+                            subproc(f"\t\t{node_name} ↔︎ {other_node_name}: {round(ohm, 3)} Ω    (internally: {conductance.cond})")
+
 
         return results

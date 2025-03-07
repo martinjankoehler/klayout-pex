@@ -68,6 +68,7 @@ class KLayoutMergedExtractedLayerInfo:
 @dataclass
 class KLayoutExtractionContext:
     lvsdb: kdb.LayoutToNetlist
+    tech: TechInfo
     dbu: float
     layer_index_map: LayerIndexMap
     lvsdb_regions: LVSDBRegions
@@ -133,6 +134,7 @@ class KLayoutExtractionContext:
 
         return KLayoutExtractionContext(
             lvsdb=lvsdb,
+            tech=tech,
             dbu=dbu,
             annotated_top_cell=top_cell,
             layer_index_map=layer_index_map,
@@ -311,4 +313,29 @@ class KLayoutExtractionContext:
 
         return shapes
 
+    def pins_of_layer(self, gds_pair: GDSPair) -> kdb.Region:
+        pin_gds_pair = self.tech.pin_layer_mapping_for_drw_gds_pair[gds_pair]
 
+        lyr = self.extracted_layers.get(pin_gds_pair, None)
+        if lyr is None:
+            return kdb.Region()
+        if len(lyr.source_layers) != 1:
+            raise NotImplementedError(f"currently only supporting 1 pin layer mapping, "
+                                      f"but got {len(lyr.source_layers)}")
+        return lyr.source_layers[0].region
+
+    def labels_of_layer(self, gds_pair: GDSPair) -> kdb.Texts:
+        # TODO! the labels will come directly from the LVS database!
+        #       for now, as a workaround, get them from the layout
+        #
+        # NOTE: the labels for sky130A are always same layer, datatype=5
+
+        lay: kdb.Layout = self.lvsdb.internal_layout()
+        label_layer_idx = lay.find_layer(gds_pair[0], 5)  # sky130 layer dt = 5
+        sh_it = lay.begin_shapes(self.lvsdb.internal_top_cell(), label_layer_idx)
+        labels: kdb.Texts = kdb.Texts(sh_it)
+
+        # TODO: FIXME: this is a workaround for now,
+        #       as the geometry of the original layout does not necessarily match the annotated layout
+        #       until Matthias retains the labels within the Netlist DB
+        return labels

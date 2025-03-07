@@ -128,6 +128,21 @@ void addLayer(kpex::tech::Technology *tech,
     layer->set_gds_datatype(gds_datatype);
 }
 
+void addPinLayerMapping(kpex::tech::Technology *tech,
+                        const std::string &description,
+                        uint32_t pin_gds_layer,
+                        uint32_t pin_gds_datatype,
+                        uint32_t drw_gds_layer,
+                        uint32_t drw_gds_datatype)
+{
+    kpex::tech::PinLayerMapping *m = tech->add_pin_layer_mappings();
+    m->set_description(description);
+    m->set_pin_gds_layer(pin_gds_layer);
+    m->set_pin_gds_datatype(pin_gds_datatype);
+    m->set_drw_gds_layer(drw_gds_layer);
+    m->set_drw_gds_datatype(drw_gds_datatype);
+}
+
 void addComputedLayer(kpex::tech::Technology *tech,
                       kpex::tech::ComputedLayerInfo_Kind kind,
                       const std::string &name,
@@ -144,6 +159,37 @@ void addComputedLayer(kpex::tech::Technology *tech,
     layer->set_description(description);
     layer->set_gds_layer(gds_layer);
     layer->set_gds_datatype(gds_datatype);
+}
+
+void addLayerResistance(kpex::tech::ResistanceInfo *ri,
+                        const std::string &layer_name,
+                        double resistance)
+{
+    kpex::tech::ResistanceInfo::LayerResistance *lr = ri->add_layers();
+    lr->set_layer_name(layer_name);
+    lr->set_resistance(resistance);
+}
+
+void addLayerResistance(kpex::tech::ResistanceInfo *ri,
+                        const std::string &layer_name,
+                        double resistance,
+                        double corner_adjustment_fraction)
+{
+    kpex::tech::ResistanceInfo::LayerResistance *lr = ri->add_layers();
+    lr->set_layer_name(layer_name);
+    lr->set_resistance(resistance);
+    if (corner_adjustment_fraction != 0.0) {
+        lr->set_corner_adjustment_fraction(corner_adjustment_fraction);
+    }
+}
+
+void addViaResistance(kpex::tech::ResistanceInfo *ri,
+                      const std::string &via_name,
+                      double resistance)
+{
+    kpex::tech::ResistanceInfo::ViaResistance *vr = ri->add_vias();
+    vr->set_via_name(via_name);
+    vr->set_resistance(resistance);
 }
 
 void addSubstrateCap(kpex::tech::CapacitanceInfo *ci,

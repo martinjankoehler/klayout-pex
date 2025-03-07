@@ -64,6 +64,13 @@ void addLayer(kpex::tech::Technology *tech,
               uint32_t gds_datatype,
               const std::string &description);
 
+void addPinLayerMapping(kpex::tech::Technology *tech,
+                        const std::string &description,
+                        uint32_t pin_gds_layer,
+                        uint32_t pin_gds_datatype,
+                        uint32_t drw_gds_layer,
+                        uint32_t drw_gds_datatype);
+
 void addComputedLayer(kpex::tech::Technology *tech,
                       kpex::tech::ComputedLayerInfo_Kind kind,
                       const std::string &name,
@@ -71,6 +78,19 @@ void addComputedLayer(kpex::tech::Technology *tech,
                       uint32_t gds_datatype,
                       const std::string &original_layer_name,
                       const std::string &description);
+
+void addLayerResistance(kpex::tech::ResistanceInfo *ri,
+                        const std::string &layer_name,
+                        double resistance);
+
+void addLayerResistance(kpex::tech::ResistanceInfo *ri,
+                        const std::string &layer_name,
+                        double resistance,
+                        double corner_adjustment_fraction);
+
+void addViaResistance(kpex::tech::ResistanceInfo *ri,
+                      const std::string &via_name,
+                      double resistance);
 
 void addSubstrateCap(kpex::tech::CapacitanceInfo *ci,
                      const std::string &layer_name,

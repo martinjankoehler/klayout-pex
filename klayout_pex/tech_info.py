@@ -87,6 +87,13 @@ class TechInfo:
         return {lyr.name: lyr for lyr in self.tech.layers}
 
     @cached_property
+    def pin_layer_mapping_for_drw_gds_pair(self) -> Dict[GDSPair, tech_pb2.PinLayerMapping]:
+        return {
+            (m.drw_gds_layer, m.drw_gds_datatype): (m.pin_gds_layer, m.pin_gds_datatype)
+            for m in self.tech.pin_layer_mappings
+        }
+
+    @cached_property
     def gds_pair_for_layer_name(self) -> Dict[str, GDSPair]:
         return {lyr.name: (lyr.gds_layer, lyr.gds_datatype) for lyr in self.tech.layers}
 
@@ -200,6 +207,18 @@ class TechInfo:
                 if lyr.layer_type == process_stack_pb2.ProcessStackInfo.LAYER_TYPE_METAL:
                     return diel_lyr, lyr.metal_layer.height - found_layer.metal_layer.height
         return diel_lyr, 5.0   # air TODO
+
+    #--------------------------------
+
+    @cached_property
+    def layer_resistance_by_layer_name(self) -> Dict[str, process_parasitics_pb2.ResistanceInfo.LayerResistance]:
+        return {r.layer_name: r for r in self.tech.process_parasitics.resistance.layers}
+
+    @cached_property
+    def via_resistance_by_layer_name(self) -> Dict[str, process_parasitics_pb2.ResistanceInfo.ViaResistance]:
+        return {r.via_name: r for r in self.tech.process_parasitics.resistance.vias}
+
+    #--------------------------------
 
     @cached_property
     def substrate_cap_by_layer_name(self) -> Dict[str, process_parasitics_pb2.CapacitanceInfo.SubstrateCapacitance]:
