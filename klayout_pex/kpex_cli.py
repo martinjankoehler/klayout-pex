@@ -70,6 +70,7 @@ from .magic.magic_runner import MagicPEXMode, run_magic, prepare_magic_script
 from .magic.magic_log_analyzer import MagicLogAnalyzer
 from .pdk_config import PDKConfig
 from .rcx25.extractor import RCExtractor, ExtractionResults
+from .rcx25.pex_mode import PEXMode
 from .tech_info import TechInfo
 from .util.multiple_choice import MultipleChoicePattern
 from .util.argparse_helpers import render_enum_help, true_or_false
@@ -202,6 +203,8 @@ class KpexCLI:
         group_fastercap.add_argument("--k_void", "-k", dest="k_void",
                                      type=float, default=3.9,
                                      help="Dielectric constant of void (default is %(default)s)")
+
+        # TODO: reflect that these are also now used by KPEX/2.5D engine!
         group_fastercap.add_argument("--delaunay_amax", "-a", dest="delaunay_amax",
                                      type=float, default=50,
                                      help="Delaunay triangulation maximum area (default is %(default)s)")
@@ -272,6 +275,9 @@ class KpexCLI:
                                   help="Path to magic executable (default is '%(default)s')")
 
         group_25d = main_parser.add_argument_group("2.5D options")
+        group_25d.add_argument("--mode", dest='pex_mode',
+                               default=PEXMode.DEFAULT, type=PEXMode, choices=list(PEXMode),
+                               help=render_enum_help(topic='mode', enum_cls=PEXMode))
         group_25d.add_argument("--halo", dest="halo",
                                  type=float, default=None,
                                  help="Custom sidewall halo distance (in µm) to override tech info "
@@ -643,7 +649,15 @@ class KpexCLI:
                              tech_info: TechInfo,
                              report_path: str,
                              netlist_csv_path: str):
+        # TODO: make this separatly configurable
+        #       for now we use 0
+        args.rcx25d_delaunay_amax = 0
+        args.rcx25d_delaunay_b = 0.5
+
         extractor = RCExtractor(pex_context=pex_context,
+                                pex_mode=args.pex_mode,
+                                delaunay_amax=args.rcx25d_delaunay_amax,
+                                delaunay_b=args.rcx25d_delaunay_b,
                                 scale_ratio_to_fit_halo=args.scale_ratio_to_fit_halo,
                                 tech_info=tech_info,
                                 report_path=report_path)
