@@ -1,0 +1,1 @@
+SUBPROCESS __kpex__:kpex_cli.py:750 /home/runner/work/klayout-pex/klayout-pex/.venv/lib/python3.12/site-packages/pytest/__main__.py -m slow --alluredir build/allure-results --color no
