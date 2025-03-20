@@ -1,0 +1,43 @@
+3 rows changed, 2 rows removed
+
+3 rows changed
+
+  None: C1
+    Net1: "C" => "A"
+    Capacitance [fF]: "11.92  # TODO: magic=8.231f " => "11.92"
+  extras:
+    Net1: A
+    Net2: VSUBS
+
+  None: C2
+    Net1: "A" => "B"
+    Capacitance [fF]: "11.92  # TODO: magic=8.231f" => "11.92"
+  extras:
+    Net1: B
+    Net2: VSUBS
+
+  None: C3
+    Net1: "B" => "A"
+    Net2: "VSUBS" => "B"
+    Capacitance [fF]: "11.92  # TODO: magic=4.452f" => "7.5"
+  extras:
+    Net1: A
+    Net2: B
+
+2 rows removed
+
+  Device: C4
+  Net1: B
+  Net2: C
+  Capacitance [fF]: 7.5
+  extras:
+    Net1: B
+    Net2: C
+
+  Device: C5
+  Net1: A
+  Net2: B
+  Capacitance [fF]: 7.5
+  extras:
+    Net1: A
+    Net2: B

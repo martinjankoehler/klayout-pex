@@ -1,0 +1,64 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "11.92  # TODO: magic=8.231f ",
+                    "11.92"
+                ],
+                "Net1": [
+                    "C",
+                    "A"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "11.92  # TODO: magic=8.231f",
+                    "11.92"
+                ],
+                "Net1": [
+                    "A",
+                    "B"
+                ]
+            },
+            "key": "C2"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "11.92  # TODO: magic=4.452f",
+                    "7.5"
+                ],
+                "Net1": [
+                    "B",
+                    "A"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "B"
+                ]
+            },
+            "key": "C3"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": [
+        {
+            "Capacitance [fF]": "7.5",
+            "Device": "C4",
+            "Net1": "B",
+            "Net2": "C"
+        },
+        {
+            "Capacitance [fF]": "7.5",
+            "Device": "C5",
+            "Net1": "A",
+            "Net2": "B"
+        }
+    ]
+}
