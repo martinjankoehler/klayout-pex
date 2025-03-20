@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Coverage for klayout_pex_protobuf/tech_pb2.py: 61%</title>
+    <title>Coverage for klayout_pex_protobuf/tech_pb2.py: 56%</title>
     <link rel="icon" sizes="32x32" href="favicon_32_cb_58284776.png">
     <link rel="stylesheet" href="style_cb_8e611ae1.css" type="text/css">
     <script src="coverage_html_cb_6fb7b396.js" defer></script>
@@ -12,7 +12,7 @@
     <div class="content">
         <h1>
             <span class="text">Coverage for </span><b>klayout_pex_protobuf/tech_pb2.py</b>:
-            <span class="pc_cov">61%</span>
+            <span class="pc_cov">56%</span>
         </h1>
         <aside id="help_panel_wrapper">
             <input id="help_panel_state" type="checkbox">
@@ -54,9 +54,9 @@
             </div>
         </aside>
         <h2>
-            <span class="text">23 statements &nbsp;</span>
+            <span class="text">25 statements &nbsp;</span>
             <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">14<span class="text"> run</span></button>
-            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">9<span class="text"> missing</span></button>
+            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">11<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
         <p class="text">
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_a44f0ac069e85531___init___py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.7.0">coverage.py v7.7.0</a>,
-            created at 2025-03-20 14:37 +0000
+            created at 2025-03-20 19:05 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -108,7 +108,7 @@
     <p class="run"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t"><span class="key">import</span> <span class="nam">process_parasitics_pb2</span> <span class="key">as</span> <span class="nam">process__parasitics__pb2</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t"><span class="nam">DESCRIPTOR</span> <span class="op">=</span> <span class="nam">_descriptor_pool</span><span class="op">.</span><span class="nam">Default</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">AddSerializedFile</span><span class="op">(</span><span class="str">b'\n\ntech.proto\x12\tkpex.tech\x1a\x13process_stack.proto\x1a\x18process_parasitics.proto\"\xef\x01\n\nTechnology\x12\x0c\n\x04name\x18\x01 \x01(\t\x12$\n\x06layers\x18\x65 \x03(\x0b\x32\x14.kpex.tech.LayerInfo\x12\x39\n\x13lvs_computed_layers\x18x \x03(\x0b\x32\x1c.kpex.tech.ComputedLayerInfo\x12\x33\n\rprocess_stack\x18\x8c\x01 \x01(\x0b\x32\x1b.kpex.tech.ProcessStackInfo\x12=\n\x12process_parasitics\x18\xc8\x01 \x01(\x0b\x32 .kpex.tech.ProcessParasiticsInfo\"W\n\tLayerInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x0b \x01(\t\x12\x11\n\tgds_layer\x18\x15 \x01(\r\x12\x14\n\x0cgds_datatype\x18\x1f \x01(\r\"\xf0\x01\n\x11\x43omputedLayerInfo\x12/\n\x04kind\x18\n \x01(\x0e\x32!.kpex.tech.ComputedLayerInfo.Kind\x12(\n\nlayer_info\x18\x14 \x01(\x0b\x32\x14.kpex.tech.LayerInfo\x12\x1b\n\x13original_layer_name\x18\x1e \x01(\t\"c\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\x10\n\x0cKIND_REGULAR\x10\x01\x12\x19\n\x15KIND_DEVICE_CAPACITOR\x10\x02\x12\x18\n\x14KIND_DEVICE_RESISTOR\x10\x03\x62\x06proto3'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t"><span class="nam">DESCRIPTOR</span> <span class="op">=</span> <span class="nam">_descriptor_pool</span><span class="op">.</span><span class="nam">Default</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">AddSerializedFile</span><span class="op">(</span><span class="str">b'\n\ntech.proto\x12\tkpex.tech\x1a\x13process_stack.proto\x1a\x18process_parasitics.proto\"\xef\x01\n\nTechnology\x12\x0c\n\x04name\x18\x01 \x01(\t\x12$\n\x06layers\x18\x65 \x03(\x0b\x32\x14.kpex.tech.LayerInfo\x12\x39\n\x13lvs_computed_layers\x18x \x03(\x0b\x32\x1c.kpex.tech.ComputedLayerInfo\x12\x33\n\rprocess_stack\x18\x8c\x01 \x01(\x0b\x32\x1b.kpex.tech.ProcessStackInfo\x12=\n\x12process_parasitics\x18\xc8\x01 \x01(\x0b\x32 .kpex.tech.ProcessParasiticsInfo\"*\n\x07GDSPair\x12\r\n\x05layer\x18\x01 \x01(\r\x12\x10\n\x08\x64\x61tatype\x18\x02 \x01(\r\"\xae\x01\n\tLayerInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\n \x01(\t\x12(\n\x0c\x64rw_gds_pair\x18\x14 \x01(\x0b\x32\x12.kpex.tech.GDSPair\x12(\n\x0cpin_gds_pair\x18\x1e \x01(\x0b\x32\x12.kpex.tech.GDSPair\x12*\n\x0elabel_gds_pair\x18( \x01(\x0b\x32\x12.kpex.tech.GDSPair\"\xfe\x01\n\x11\x43omputedLayerInfo\x12/\n\x04kind\x18\n \x01(\x0e\x32!.kpex.tech.ComputedLayerInfo.Kind\x12(\n\nlayer_info\x18\x14 \x01(\x0b\x32\x14.kpex.tech.LayerInfo\x12\x1b\n\x13original_layer_name\x18( \x01(\t\"q\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\x10\n\x0cKIND_REGULAR\x10\x01\x12\x19\n\x15KIND_DEVICE_CAPACITOR\x10\x02\x12\x18\n\x14KIND_DEVICE_RESISTOR\x10\x03\x12\x0c\n\x08KIND_PIN\x10\x04\x62\x06proto3'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t31" href="#t31">31</a></span><span class="t"><span class="nam">_globals</span> <span class="op">=</span> <span class="nam">globals</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t"><span class="nam">_builder</span><span class="op">.</span><span class="nam">BuildMessageAndEnumDescriptors</span><span class="op">(</span><span class="nam">DESCRIPTOR</span><span class="op">,</span> <span class="nam">_globals</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -117,13 +117,15 @@
     <p class="mis show_mis"><span class="n"><a id="t35" href="#t35">35</a></span><span class="t">  <span class="nam">DESCRIPTOR</span><span class="op">.</span><span class="nam">_loaded_options</span> <span class="op">=</span> <span class="key">None</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t36" href="#t36">36</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_TECHNOLOGY'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">73</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t37" href="#t37">37</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_TECHNOLOGY'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">312</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t38" href="#t38">38</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_LAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">314</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t39" href="#t39">39</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_LAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">401</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t40" href="#t40">40</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">404</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t41" href="#t41">41</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">644</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t42" href="#t42">42</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO_KIND'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">545</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t43" href="#t43">43</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO_KIND'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">644</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t44" href="#t44">44</a></span><span class="t"><span class="com"># @@protoc_insertion_point(module_scope)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t38" href="#t38">38</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_GDSPAIR'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">314</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t39" href="#t39">39</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_GDSPAIR'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">356</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t40" href="#t40">40</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_LAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">359</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t41" href="#t41">41</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_LAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">533</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t42" href="#t42">42</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">536</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t43" href="#t43">43</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">790</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t44" href="#t44">44</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO_KIND'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_start</span><span class="op">=</span><span class="num">677</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t45" href="#t45">45</a></span><span class="t">  <span class="nam">_globals</span><span class="op">[</span><span class="str">'_COMPUTEDLAYERINFO_KIND'</span><span class="op">]</span><span class="op">.</span><span class="nam">_serialized_end</span><span class="op">=</span><span class="num">790</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t46" href="#t46">46</a></span><span class="t"><span class="com"># @@protoc_insertion_point(module_scope)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -133,7 +135,7 @@
             <a class="nav" href="z_a44f0ac069e85531___init___py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.7.0">coverage.py v7.7.0</a>,
-            created at 2025-03-20 14:37 +0000
+            created at 2025-03-20 19:05 +0000
         </p>
     </div>
 </footer>
