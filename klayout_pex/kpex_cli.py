@@ -70,6 +70,7 @@ from .magic.magic_runner import MagicPEXMode, run_magic, prepare_magic_script
 from .magic.magic_log_analyzer import MagicLogAnalyzer
 from .pdk_config import PDKConfig
 from .rcx25.extractor import RCExtractor, ExtractionResults
+from .rcx25.pex_mode import PEXMode
 from .tech_info import TechInfo
 from .util.multiple_choice import MultipleChoicePattern
 from .util.argparse_helpers import render_enum_help, true_or_false
@@ -207,6 +208,8 @@ class KpexCLI:
         group_fastercap.add_argument("--k_void", "-k", dest="k_void",
                                      type=float, default=3.9,
                                      help="Dielectric constant of void (default is %(default)s)")
+
+        # TODO: reflect that these are also now used by KPEX/2.5D engine!
         group_fastercap.add_argument("--delaunay_amax", "-a", dest="delaunay_amax",
                                      type=float, default=50,
                                      help="Delaunay triangulation maximum area (default is %(default)s)")
@@ -277,10 +280,16 @@ class KpexCLI:
                                   help="Path to magic executable (default is '%(default)s')")
 
         group_25d = main_parser.add_argument_group("2.5D options")
+        group_25d.add_argument("--mode", dest='pex_mode',
+                               default=PEXMode.DEFAULT, type=PEXMode, choices=list(PEXMode),
+                               help=render_enum_help(topic='mode', enum_cls=PEXMode))
         group_25d.add_argument("--halo", dest="halo",
                                  type=float, default=None,
                                  help="Custom sidewall halo distance (in µm) to override tech info "
                                       "(default is no custom halo)")
+        group_25d.add_argument("--scale", dest="scale_ratio_to_fit_halo",
+                                type=true_or_false, default=True,
+                                help=f"Scale fringe ratios, so that halo distance is 100%% (default is %(default)s)")
 
         if arg_list is None:
             arg_list = sys.argv[1:]
@@ -509,7 +518,7 @@ class KpexCLI:
         netlist_expander = NetlistExpander()
         expanded_netlist = netlist_expander.expand(
             extracted_netlist=pex_context.lvsdb.netlist(),
-            top_cell_name=pex_context.top_cell.name,
+            top_cell_name=pex_context.annotated_top_cell.name,
             cap_matrix=cap_matrix,
             blackbox_devices=args.blackbox_devices
         )
@@ -517,7 +526,7 @@ class KpexCLI:
         # create a nice CSV for reports, useful for spreadsheets
         netlist_csv_writer = NetlistCSVWriter()
         netlist_csv_writer.write_csv(netlist=expanded_netlist,
-                                     top_cell_name=pex_context.top_cell.name,
+                                     top_cell_name=pex_context.annotated_top_cell.name,
                                      output_path=expanded_netlist_csv_path)
 
         rule("Extended netlist (CSV format):")
@@ -536,7 +545,7 @@ class KpexCLI:
 
         netlist_reducer = NetlistReducer()
         reduced_netlist = netlist_reducer.reduce(netlist=expanded_netlist,
-                                                 top_cell_name=pex_context.top_cell.name)
+                                                 top_cell_name=pex_context.annotated_top_cell.name)
         reduced_netlist.write(reduced_netlist_path, spice_writer)
         info(f"Wrote reduced netlist to: {reduced_netlist_path}")
 
@@ -622,7 +631,7 @@ class KpexCLI:
         netlist_expander = NetlistExpander()
         expanded_netlist = netlist_expander.expand(
             extracted_netlist=pex_context.lvsdb.netlist(),
-            top_cell_name=pex_context.top_cell.name,
+            top_cell_name=pex_context.annotated_top_cell.name,
             cap_matrix=cap_matrix,
             blackbox_devices=args.blackbox_devices
         )
@@ -635,7 +644,7 @@ class KpexCLI:
 
         netlist_reducer = NetlistReducer()
         reduced_netlist = netlist_reducer.reduce(netlist=expanded_netlist,
-                                                 top_cell_name=pex_context.top_cell.name)
+                                                 top_cell_name=pex_context.annotated_top_cell.name)
         reduced_netlist.write(reduced_netlist_path, spice_writer)
         info(f"Wrote reduced netlist to: {reduced_netlist_path}")
 
@@ -645,18 +654,29 @@ class KpexCLI:
                              tech_info: TechInfo,
                              report_path: str,
                              netlist_csv_path: str):
+        # TODO: make this separatly configurable
+        #       for now we use 0
+        args.rcx25d_delaunay_amax = 0
+        args.rcx25d_delaunay_b = 0.5
+
         extractor = RCExtractor(pex_context=pex_context,
+                                pex_mode=args.pex_mode,
+                                delaunay_amax=args.rcx25d_delaunay_amax,
+                                delaunay_b=args.rcx25d_delaunay_b,
+                                scale_ratio_to_fit_halo=args.scale_ratio_to_fit_halo,
                                 tech_info=tech_info,
                                 report_path=report_path)
         extraction_results = extractor.extract()
 
         with open(netlist_csv_path, 'w') as f:
-            f.write('Device;Net1;Net2;Capacitance [fF]\n')
-            # f.write('Device;Net1;Net2;Capacitance [F];Capacitance [fF]\n')
             summary = extraction_results.summarize()
+
+            f.write('Device;Net1;Net2;Capacitance [fF];Resistance [Ω]\n')
             for idx, (key, cap_value) in enumerate(summary.capacitances.items()):
                 # f.write(f"C{idx + 1};{key.net1};{key.net2};{cap_value / 1e15};{round(cap_value, 3)}\n")
-                f.write(f"C{idx + 1};{key.net1};{key.net2};{round(cap_value, 3)}\n")
+                f.write(f"C{idx + 1};{key.net1};{key.net2};{round(cap_value, 3)};\n")
+            for idx, (key, res_value) in enumerate(summary.resistances.items()):
+                f.write(f"R{idx + 1};{key.net1};{key.net2};;{round(res_value, 3)}\n")
 
         rule("kpex/2.5D extracted netlist (CSV format):")
         with open(netlist_csv_path, 'r') as f:
@@ -814,7 +834,7 @@ class KpexCLI:
             info(f"{gds_pair} -> ({' '.join(names)})")
 
         gds_path = os.path.join(args.output_dir_path, f"{args.effective_cell_name}_l2n_extracted.oas")
-        pex_context.target_layout.write(gds_path)
+        pex_context.annotated_layout.write(gds_path)
 
         gds_path = os.path.join(args.output_dir_path, f"{args.effective_cell_name}_l2n_internal.oas")
         pex_context.lvsdb.internal_layout().write(gds_path)
