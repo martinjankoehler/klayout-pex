@@ -1,0 +1,28 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Net1": [
+                    "TOPA",
+                    "TOPB"
+                ]
+            },
+            "key": "C5"
+        },
+        {
+            "changes": {
+                "Net1": [
+                    "TOPB",
+                    "TOPA"
+                ]
+            },
+            "key": "C6"
+        }
+    ],
+    "columns_added": [
+        "Resistance [\u03a9]"
+    ],
+    "columns_removed": [],
+    "removed": []
+}

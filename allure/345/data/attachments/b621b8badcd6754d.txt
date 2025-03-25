@@ -1,0 +1,19 @@
+1 column added, 2 rows changed
+
+1 column added
+
+  Resistance [Ω]
+
+2 rows changed
+
+  None: C5
+    Net1: "TOPA" => "TOPB"
+  extras:
+    Net1: TOPB
+    Net2: VSUBS
+
+  None: C6
+    Net1: "TOPB" => "TOPA"
+  extras:
+    Net1: TOPA
+    Net2: VSUBS

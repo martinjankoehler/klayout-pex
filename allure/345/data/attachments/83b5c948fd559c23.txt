@@ -1,0 +1,72 @@
+1 column added, 9 rows changed
+
+1 column added
+
+  Resistance [Ω]
+
+9 rows changed
+
+  None: C1
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered2" => "LOWER_PartialSideHaloOverlap_Fingered1"
+    Capacitance [fF]: "8.16" => "5.884"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered1
+    Net2: VSUBS
+
+  None: C2
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered3" => "LOWER_PartialSideHaloOverlap_Fingered2"
+    Capacitance [fF]: "8.164" => "8.16"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered2
+    Net2: VSUBS
+
+  None: C3
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered1" => "LOWER_PartialSideHaloOverlap_Fingered3"
+    Capacitance [fF]: "5.884" => "8.164"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered3
+    Net2: VSUBS
+
+  None: C6
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered2" => "LOWER_PartialSideHaloOverlap_Fingered1"
+    Net2: "LOWER_PartialSideHaloOverlap_Fingered3" => "LOWER_PartialSideHaloOverlap_Fingered2"
+    Capacitance [fF]: "0.002" => "0.003"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered1
+    Net2: LOWER_PartialSideHaloOverlap_Fingered2
+
+  None: C7
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered1" => "LOWER_PartialSideHaloOverlap_Fingered2"
+    Net2: "LOWER_PartialSideHaloOverlap_Fingered2" => "LOWER_PartialSideHaloOverlap_Fingered3"
+    Capacitance [fF]: "0.003" => "0.002"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered2
+    Net2: LOWER_PartialSideHaloOverlap_Fingered3
+
+  None: C9
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered3" => "LOWER_PartialSideHaloOverlap_Fingered2"
+    Capacitance [fF]: "0.159" => "2.466"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered2
+    Net2: UPPER
+
+  None: C10
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered2" => "LOWER_PartialSideHaloOverlap_Fingered3"
+    Capacitance [fF]: "2.466" => "0.159"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered3
+    Net2: UPPER
+
+  None: C11
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered4" => "LOWER_PartialSideHaloOverlap_Fingered1"
+    Capacitance [fF]: "0.358" => "0.244"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered1
+    Net2: UPPER
+
+  None: C12
+    Net1: "LOWER_PartialSideHaloOverlap_Fingered1" => "LOWER_PartialSideHaloOverlap_Fingered4"
+    Capacitance [fF]: "0.244" => "0.358"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Fingered4
+    Net2: UPPER

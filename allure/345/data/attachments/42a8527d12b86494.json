@@ -1,0 +1,54 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Net1": [
+                    "Complex_Shape_L",
+                    "Complex_Shape_B"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Net1": [
+                    "Complex_Shape_B",
+                    "Complex_Shape_L"
+                ]
+            },
+            "key": "C4"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.089",
+                    "0.249"
+                ],
+                "Net1": [
+                    "Complex_Shape_R",
+                    "Complex_Shape_L"
+                ]
+            },
+            "key": "C8"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.249",
+                    "0.089"
+                ],
+                "Net1": [
+                    "Complex_Shape_L",
+                    "Complex_Shape_R"
+                ]
+            },
+            "key": "C9"
+        }
+    ],
+    "columns_added": [
+        "Resistance [\u03a9]"
+    ],
+    "columns_removed": [],
+    "removed": []
+}

@@ -1,0 +1,63 @@
+1 column added, 8 rows changed
+
+1 column added
+
+  Resistance [Ω]
+
+8 rows changed
+
+  None: C2
+    Net1: "LOWER_OutsideHalo" => "LOWER_FullHaloOverlap"
+    Capacitance [fF]: "73.274" => "177.601"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: VSUBS
+
+  None: C3
+    Net1: "LOWER_PartialSideHaloOverlap_Separated" => "LOWER_OutsideHalo"
+    Capacitance [fF]: "90.618" => "73.274"
+  extras:
+    Net1: LOWER_OutsideHalo
+    Net2: VSUBS
+
+  None: C4
+    Net1: "LOWER_PartialSideHaloOverlap_BothSides_separated" => "LOWER_PartialSideHaloOverlap_Separated"
+    Capacitance [fF]: "7.931" => "90.618"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Separated
+    Net2: VSUBS
+
+  None: C6
+    Net1: "LOWER_FullHaloOverlap" => "LOWER_PartialSideHaloOverlap_BothSides_separated"
+    Capacitance [fF]: "177.601" => "7.931"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_BothSides_separated
+    Net2: VSUBS
+
+  None: C14
+    Net2: "LOWER_OutsideHalo" => "LOWER_PartialSideHaloOverlap_Separated"
+    Capacitance [fF]: "0.101" => "0.248"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: LOWER_PartialSideHaloOverlap_Separated
+
+  None: C16
+    Net2: "LOWER_PartialSideHaloOverlap_Separated" => "LOWER_OutsideHalo"
+    Capacitance [fF]: "0.248" => "0.101"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: LOWER_OutsideHalo
+
+  None: C17
+    Net1: "LOWER_OutsideHalo" => "LOWER_PartialSideHaloOverlap_BothSides_separated"
+    Capacitance [fF]: "0.076" => "0.261"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_BothSides_separated
+    Net2: UPPER
+
+  None: C18
+    Net1: "LOWER_PartialSideHaloOverlap_BothSides_separated" => "LOWER_OutsideHalo"
+    Capacitance [fF]: "0.261" => "0.076"
+  extras:
+    Net1: LOWER_OutsideHalo
+    Net2: UPPER

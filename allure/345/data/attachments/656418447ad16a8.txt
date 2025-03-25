@@ -1,0 +1,33 @@
+1 column added, 4 rows changed
+
+1 column added
+
+  Resistance [Ω]
+
+4 rows changed
+
+  None: C1
+    Net1: "Complex_Shape_L" => "Complex_Shape_B"
+  extras:
+    Net1: Complex_Shape_B
+    Net2: VSUBS
+
+  None: C4
+    Net1: "Complex_Shape_B" => "Complex_Shape_L"
+  extras:
+    Net1: Complex_Shape_L
+    Net2: VSUBS
+
+  None: C8
+    Net1: "Complex_Shape_R" => "Complex_Shape_L"
+    Capacitance [fF]: "0.089" => "0.249"
+  extras:
+    Net1: Complex_Shape_L
+    Net2: UPPER
+
+  None: C9
+    Net1: "Complex_Shape_L" => "Complex_Shape_R"
+    Capacitance [fF]: "0.249" => "0.089"
+  extras:
+    Net1: Complex_Shape_R
+    Net2: UPPER
