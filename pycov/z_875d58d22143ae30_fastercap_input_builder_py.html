@@ -64,8 +64,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="z_875d58d22143ae30_fastercap_model_generator_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.7.0">coverage.py v7.7.0</a>,
-            created at 2025-03-20 19:05 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.7.1">coverage.py v7.7.1</a>,
+            created at 2025-03-25 15:44 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -202,11 +202,11 @@
     <p class="run"><span class="n"><a id="t120" href="#t120">120</a></span><span class="t">        <span class="key">for</span> <span class="nam">diel_name</span><span class="op">,</span> <span class="nam">diel_k</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">tech_info</span><span class="op">.</span><span class="nam">dielectric_by_name</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t121" href="#t121">121</a></span><span class="t">            <span class="nam">model_builder</span><span class="op">.</span><span class="nam">add_material</span><span class="op">(</span><span class="nam">name</span><span class="op">=</span><span class="nam">diel_name</span><span class="op">,</span> <span class="nam">k</span><span class="op">=</span><span class="nam">diel_k</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t122" href="#t122">122</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t123" href="#t123">123</a></span><span class="t">        <span class="nam">circuit</span> <span class="op">=</span> <span class="nam">netlist</span><span class="op">.</span><span class="nam">circuit_by_name</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">pex_context</span><span class="op">.</span><span class="nam">top_cell</span><span class="op">.</span><span class="nam">name</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t123" href="#t123">123</a></span><span class="t">        <span class="nam">circuit</span> <span class="op">=</span> <span class="nam">netlist</span><span class="op">.</span><span class="nam">circuit_by_name</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">pex_context</span><span class="op">.</span><span class="nam">annotated_top_cell</span><span class="op">.</span><span class="nam">name</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t124" href="#t124">124</a></span><span class="t">        <span class="com"># https://www.klayout.de/doc-qt5/code/class_Circuit.html</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t125" href="#t125">125</a></span><span class="t">        <span class="key">if</span> <span class="key">not</span> <span class="nam">circuit</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t126" href="#t126">126</a></span><span class="t">            <span class="nam">circuits</span> <span class="op">=</span> <span class="op">[</span><span class="nam">c</span><span class="op">.</span><span class="nam">name</span> <span class="key">for</span> <span class="nam">c</span> <span class="key">in</span> <span class="nam">netlist</span><span class="op">.</span><span class="nam">each_circuit</span><span class="op">(</span><span class="op">)</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t127" href="#t127">127</a></span><span class="t">            <span class="key">raise</span> <span class="nam">Exception</span><span class="op">(</span><span class="fst">f"</span><span class="fst">Expected circuit called </span><span class="op">{</span><span class="nam">self</span><span class="op">.</span><span class="nam">pex_context</span><span class="op">.</span><span class="nam">top_cell</span><span class="op">.</span><span class="nam">name</span><span class="op">}</span><span class="fst"> in extracted netlist, </span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t127" href="#t127">127</a></span><span class="t">            <span class="key">raise</span> <span class="nam">Exception</span><span class="op">(</span><span class="fst">f"</span><span class="fst">Expected circuit called </span><span class="op">{</span><span class="nam">self</span><span class="op">.</span><span class="nam">pex_context</span><span class="op">.</span><span class="nam">annotated_top_cell</span><span class="op">.</span><span class="nam">name</span><span class="op">}</span><span class="fst"> in extracted netlist, </span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t128" href="#t128">128</a></span><span class="t">                            <span class="fst">f"</span><span class="fst">only available circuits are: </span><span class="op">{</span><span class="nam">circuits</span><span class="op">}</span><span class="fst">"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t129" href="#t129">129</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t130" href="#t130">130</a></span><span class="t">        <span class="nam">diffusion_regions</span><span class="op">:</span> <span class="nam">List</span><span class="op">[</span><span class="nam">kdb</span><span class="op">.</span><span class="nam">Region</span><span class="op">]</span> <span class="op">=</span> <span class="op">[</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
@@ -428,8 +428,8 @@
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a class="nav" href="z_875d58d22143ae30_fastercap_model_generator_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.7.0">coverage.py v7.7.0</a>,
-            created at 2025-03-20 19:05 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.7.1">coverage.py v7.7.1</a>,
+            created at 2025-03-25 15:44 +0000
         </p>
     </div>
 </footer>
