@@ -91,10 +91,12 @@ class ResistorExtraction:
                     pin_shapes[l.string].append(pp)
                     pr.insert(pp)
 
-            r -= pr
+            r -= pr    # remember pin position instead of cutting hole
 
             try:
                 tris = r.delaunay(self.amax, self.b)
+                # instead: now there is a Polygon.delaunay()
+                #    tris = p.delaunay(pin_positions, self.amax, self.b)
             except Exception as e:
                 error(f"Failed to perform delaunay triangulation (a={self.amax}, b={self.b}) "
                       f"on polygon {r} due to exception: {e}")
@@ -123,7 +125,7 @@ class ResistorExtraction:
 
                         s = (l0 + l1 - lm1) / (8.0 * a)
 
-                        nid0 = rn.node_id(p0)
+                        nid0 = rn.node_id(p0)       # we need additional map kdb.Point -> NetName
                         nidm1 = rn.node_id(pm1)
 
                         rn.add_cond(nid0, nidm1, Conductance(s))
