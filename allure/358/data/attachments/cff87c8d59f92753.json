@@ -1,0 +1,133 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "8.16",
+                    "5.884"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered2",
+                    "LOWER_PartialSideHaloOverlap_Fingered1"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "8.164",
+                    "8.16"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered3",
+                    "LOWER_PartialSideHaloOverlap_Fingered2"
+                ]
+            },
+            "key": "C2"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "5.884",
+                    "8.164"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered1",
+                    "LOWER_PartialSideHaloOverlap_Fingered3"
+                ]
+            },
+            "key": "C3"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.002",
+                    "0.003"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered2",
+                    "LOWER_PartialSideHaloOverlap_Fingered1"
+                ],
+                "Net2": [
+                    "LOWER_PartialSideHaloOverlap_Fingered3",
+                    "LOWER_PartialSideHaloOverlap_Fingered2"
+                ]
+            },
+            "key": "C6"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.003",
+                    "0.002"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered1",
+                    "LOWER_PartialSideHaloOverlap_Fingered2"
+                ],
+                "Net2": [
+                    "LOWER_PartialSideHaloOverlap_Fingered2",
+                    "LOWER_PartialSideHaloOverlap_Fingered3"
+                ]
+            },
+            "key": "C7"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.159",
+                    "2.466"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered3",
+                    "LOWER_PartialSideHaloOverlap_Fingered2"
+                ]
+            },
+            "key": "C9"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "2.466",
+                    "0.159"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered2",
+                    "LOWER_PartialSideHaloOverlap_Fingered3"
+                ]
+            },
+            "key": "C10"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.358",
+                    "0.244"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered4",
+                    "LOWER_PartialSideHaloOverlap_Fingered1"
+                ]
+            },
+            "key": "C11"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.244",
+                    "0.358"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Fingered1",
+                    "LOWER_PartialSideHaloOverlap_Fingered4"
+                ]
+            },
+            "key": "C12"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}
