@@ -1,0 +1,112 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "73.274",
+                    "177.601"
+                ],
+                "Net1": [
+                    "LOWER_OutsideHalo",
+                    "LOWER_FullHaloOverlap"
+                ]
+            },
+            "key": "C2"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "90.618",
+                    "73.274"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Separated",
+                    "LOWER_OutsideHalo"
+                ]
+            },
+            "key": "C3"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "7.931",
+                    "90.618"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated",
+                    "LOWER_PartialSideHaloOverlap_Separated"
+                ]
+            },
+            "key": "C4"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "177.601",
+                    "7.931"
+                ],
+                "Net1": [
+                    "LOWER_FullHaloOverlap",
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated"
+                ]
+            },
+            "key": "C6"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.101",
+                    "0.248"
+                ],
+                "Net2": [
+                    "LOWER_OutsideHalo",
+                    "LOWER_PartialSideHaloOverlap_Separated"
+                ]
+            },
+            "key": "C14"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.248",
+                    "0.101"
+                ],
+                "Net2": [
+                    "LOWER_PartialSideHaloOverlap_Separated",
+                    "LOWER_OutsideHalo"
+                ]
+            },
+            "key": "C16"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.076",
+                    "0.261"
+                ],
+                "Net1": [
+                    "LOWER_OutsideHalo",
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated"
+                ]
+            },
+            "key": "C17"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.261",
+                    "0.076"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated",
+                    "LOWER_OutsideHalo"
+                ]
+            },
+            "key": "C18"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}
