@@ -395,7 +395,7 @@ class RCX25Extractor:
                                       ohm=r_via_ohm,
                                       comment=f"({len(matches_bottom)} bottom, {len(matches_top)} top)")
 
-                    match_top = matches_top[0] if len(matches_top) == 1 else (None, -1)
+                    match_top = matches_top[0] if len(matches_top) >= 1 else (None, -1)
 
                     bottom: ViaJunction | DeviceTerminal
                     if device_terminal is None:
@@ -414,6 +414,11 @@ class RCX25Extractor:
                         resistance=r_via_ohm
                     )
                     result_network.via_resistors.append(via_resistor)
+
+                    if len(matches_top) > 1:
+                        warning(f"Multiple Top matches found: {matches_top}, for via {via_polygon}, using first…")
+                    elif match_top[0] is None:
+                        error(f"Top net is None: {via_resistor}")
 
             # import rich.pretty
             # rich.pretty.pprint(result_network)
