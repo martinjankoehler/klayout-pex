@@ -1,0 +1,11 @@
+Device;Net1;Net2;Capacitance [fF];Resistance [Ω]
+C1;VSUBS;li1;386.179;
+C2;VSUBS;met1;205.619;
+C3;VSUBS;met2;51.574;
+C4;VSUBS;met3;136.063;
+C5;li1;met1;294.867;
+C6;li1;met2;99.518;
+C7;li1;met3;6.013;
+C8;met1;met2;680.769;
+C9;met1;met3;0.016;
+C10;met2;met3;0.056;

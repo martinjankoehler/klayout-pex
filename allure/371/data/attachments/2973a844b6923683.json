@@ -1,0 +1,34 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "405.081",
+                    "215.972"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "TOPA"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "215.972",
+                    "405.081"
+                ],
+                "Net2": [
+                    "TOPA",
+                    "VSUBS"
+                ]
+            },
+            "key": "C3"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}

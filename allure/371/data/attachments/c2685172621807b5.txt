@@ -1,0 +1,3 @@
+DEBUG    __kpex__:resistor_network.py:309 Starting with 4 nodes with 12 edges.
+DEBUG    __kpex__:resistor_network.py:335 Nodes left after iteration 1 with nmax=3: 2 with 2 edges.
+DEBUG    __kpex__:resistor_network.py:330 Nothing left to eliminate with nmax=None.

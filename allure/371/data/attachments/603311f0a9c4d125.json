@@ -1,0 +1,51 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "386.179",
+                    "294.867"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "UPPER"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "205.619",
+                    "386.179"
+                ],
+                "Net1": [
+                    "UPPER",
+                    "LOWER"
+                ]
+            },
+            "key": "C2"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "294.867",
+                    "205.619"
+                ],
+                "Net1": [
+                    "LOWER",
+                    "UPPER"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "VSUBS"
+                ]
+            },
+            "key": "C3"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}

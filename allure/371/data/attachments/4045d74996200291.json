@@ -1,0 +1,302 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "51.994",
+                    "0.126"
+                ],
+                "Net1": [
+                    "LOWER_NoHaloOverlap_InsideTop",
+                    "LOWER_FullHaloOverlap"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "LOWER_NoHaloOverlap_InsideTop"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "73.274",
+                    "0.101"
+                ],
+                "Net1": [
+                    "LOWER_OutsideHalo",
+                    "LOWER_FullHaloOverlap"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "LOWER_OutsideHalo"
+                ]
+            },
+            "key": "C2"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "90.618",
+                    "0.001"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Separated",
+                    "LOWER_FullHaloOverlap"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated"
+                ]
+            },
+            "key": "C3"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "7.931",
+                    "0.248"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated",
+                    "LOWER_FullHaloOverlap"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "LOWER_PartialSideHaloOverlap_Separated"
+                ]
+            },
+            "key": "C4"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "13.637",
+                    "262.817"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Touching",
+                    "LOWER_FullHaloOverlap"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "UPPER"
+                ]
+            },
+            "key": "C5"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "214.85",
+                    "0.063"
+                ],
+                "Net1": [
+                    "UPPER",
+                    "LOWER_NoHaloOverlap_InsideTop"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "LOWER_OutsideHalo"
+                ]
+            },
+            "key": "C7"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "146.991",
+                    "0.063"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "LOWER_PartialSideHaloOverlap_Touching"
+                ]
+            },
+            "key": "C8"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "32.159",
+                    "146.991"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Touching",
+                    "LOWER_NoHaloOverlap_InsideTop"
+                ]
+            },
+            "key": "C9"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "262.817",
+                    "51.994"
+                ],
+                "Net1": [
+                    "LOWER_FullHaloOverlap",
+                    "LOWER_NoHaloOverlap_InsideTop"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "VSUBS"
+                ]
+            },
+            "key": "C10"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.126",
+                    "0.076"
+                ],
+                "Net1": [
+                    "LOWER_FullHaloOverlap",
+                    "LOWER_OutsideHalo"
+                ],
+                "Net2": [
+                    "LOWER_NoHaloOverlap_InsideTop",
+                    "UPPER"
+                ]
+            },
+            "key": "C11"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.063",
+                    "73.274"
+                ],
+                "Net1": [
+                    "LOWER_NoHaloOverlap_InsideTop",
+                    "LOWER_OutsideHalo"
+                ],
+                "Net2": [
+                    "LOWER_PartialSideHaloOverlap_Touching",
+                    "VSUBS"
+                ]
+            },
+            "key": "C12"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.063",
+                    "0.261"
+                ],
+                "Net1": [
+                    "LOWER_NoHaloOverlap_InsideTop",
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated"
+                ],
+                "Net2": [
+                    "LOWER_OutsideHalo",
+                    "UPPER"
+                ]
+            },
+            "key": "C13"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.101",
+                    "7.931"
+                ],
+                "Net1": [
+                    "LOWER_FullHaloOverlap",
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated"
+                ],
+                "Net2": [
+                    "LOWER_OutsideHalo",
+                    "VSUBS"
+                ]
+            },
+            "key": "C14"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.001",
+                    "0.149"
+                ],
+                "Net1": [
+                    "LOWER_FullHaloOverlap",
+                    "LOWER_PartialSideHaloOverlap_Separated"
+                ],
+                "Net2": [
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated",
+                    "UPPER"
+                ]
+            },
+            "key": "C15"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.248",
+                    "90.618"
+                ],
+                "Net1": [
+                    "LOWER_FullHaloOverlap",
+                    "LOWER_PartialSideHaloOverlap_Separated"
+                ],
+                "Net2": [
+                    "LOWER_PartialSideHaloOverlap_Separated",
+                    "VSUBS"
+                ]
+            },
+            "key": "C16"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.076",
+                    "32.159"
+                ],
+                "Net1": [
+                    "LOWER_OutsideHalo",
+                    "LOWER_PartialSideHaloOverlap_Touching"
+                ]
+            },
+            "key": "C17"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.261",
+                    "13.637"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_BothSides_separated",
+                    "LOWER_PartialSideHaloOverlap_Touching"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "VSUBS"
+                ]
+            },
+            "key": "C18"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.149",
+                    "214.85"
+                ],
+                "Net1": [
+                    "LOWER_PartialSideHaloOverlap_Separated",
+                    "UPPER"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "VSUBS"
+                ]
+            },
+            "key": "C19"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}

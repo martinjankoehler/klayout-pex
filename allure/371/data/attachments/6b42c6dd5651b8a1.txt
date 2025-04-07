@@ -1,0 +1,23 @@
+3 rows changed
+
+  None: C1
+    Net2: "VSUBS" => "UPPER"
+    Capacitance [fF]: "5.9" => "0.358"
+  extras:
+    Net1: LOWER
+    Net2: UPPER
+
+  None: C2
+    Net1: "UPPER" => "LOWER"
+    Capacitance [fF]: "72.327" => "5.9"
+  extras:
+    Net1: LOWER
+    Net2: VSUBS
+
+  None: C3
+    Net1: "LOWER" => "UPPER"
+    Net2: "UPPER" => "VSUBS"
+    Capacitance [fF]: "0.358" => "72.327"
+  extras:
+    Net1: UPPER
+    Net2: VSUBS

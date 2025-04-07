@@ -1,0 +1,68 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "15.71",
+                    "5.291"
+                ],
+                "Net1": [
+                    "li1",
+                    "VSUBS"
+                ],
+                "Net2": [
+                    "met1",
+                    "met2"
+                ]
+            },
+            "key": "C3"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "257.488",
+                    "15.71"
+                ],
+                "Net1": [
+                    "met1",
+                    "li1"
+                ],
+                "Net2": [
+                    "met2",
+                    "met1"
+                ]
+            },
+            "key": "C4"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "5.291",
+                    "0.152"
+                ],
+                "Net1": [
+                    "VSUBS",
+                    "li1"
+                ]
+            },
+            "key": "C5"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.152",
+                    "257.488"
+                ],
+                "Net1": [
+                    "li1",
+                    "met1"
+                ]
+            },
+            "key": "C6"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}

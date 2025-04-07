@@ -1,0 +1,142 @@
+18 rows changed
+
+  None: C1
+    Net1: "LOWER_NoHaloOverlap_InsideTop" => "LOWER_FullHaloOverlap"
+    Net2: "VSUBS" => "LOWER_NoHaloOverlap_InsideTop"
+    Capacitance [fF]: "51.994" => "0.126"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: LOWER_NoHaloOverlap_InsideTop
+
+  None: C2
+    Net1: "LOWER_OutsideHalo" => "LOWER_FullHaloOverlap"
+    Net2: "VSUBS" => "LOWER_OutsideHalo"
+    Capacitance [fF]: "73.274" => "0.101"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: LOWER_OutsideHalo
+
+  None: C3
+    Net1: "LOWER_PartialSideHaloOverlap_Separated" => "LOWER_FullHaloOverlap"
+    Net2: "VSUBS" => "LOWER_PartialSideHaloOverlap_BothSides_separated"
+    Capacitance [fF]: "90.618" => "0.001"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: LOWER_PartialSideHaloOverlap_BothSides_separated
+
+  None: C4
+    Net1: "LOWER_PartialSideHaloOverlap_BothSides_separated" => "LOWER_FullHaloOverlap"
+    Net2: "VSUBS" => "LOWER_PartialSideHaloOverlap_Separated"
+    Capacitance [fF]: "7.931" => "0.248"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: LOWER_PartialSideHaloOverlap_Separated
+
+  None: C5
+    Net1: "LOWER_PartialSideHaloOverlap_Touching" => "LOWER_FullHaloOverlap"
+    Net2: "VSUBS" => "UPPER"
+    Capacitance [fF]: "13.637" => "262.817"
+  extras:
+    Net1: LOWER_FullHaloOverlap
+    Net2: UPPER
+
+  None: C7
+    Net1: "UPPER" => "LOWER_NoHaloOverlap_InsideTop"
+    Net2: "VSUBS" => "LOWER_OutsideHalo"
+    Capacitance [fF]: "214.85" => "0.063"
+  extras:
+    Net1: LOWER_NoHaloOverlap_InsideTop
+    Net2: LOWER_OutsideHalo
+
+  None: C8
+    Net2: "UPPER" => "LOWER_PartialSideHaloOverlap_Touching"
+    Capacitance [fF]: "146.991" => "0.063"
+  extras:
+    Net1: LOWER_NoHaloOverlap_InsideTop
+    Net2: LOWER_PartialSideHaloOverlap_Touching
+
+  None: C9
+    Net1: "LOWER_PartialSideHaloOverlap_Touching" => "LOWER_NoHaloOverlap_InsideTop"
+    Capacitance [fF]: "32.159" => "146.991"
+  extras:
+    Net1: LOWER_NoHaloOverlap_InsideTop
+    Net2: UPPER
+
+  None: C10
+    Net1: "LOWER_FullHaloOverlap" => "LOWER_NoHaloOverlap_InsideTop"
+    Net2: "UPPER" => "VSUBS"
+    Capacitance [fF]: "262.817" => "51.994"
+  extras:
+    Net1: LOWER_NoHaloOverlap_InsideTop
+    Net2: VSUBS
+
+  None: C11
+    Net1: "LOWER_FullHaloOverlap" => "LOWER_OutsideHalo"
+    Net2: "LOWER_NoHaloOverlap_InsideTop" => "UPPER"
+    Capacitance [fF]: "0.126" => "0.076"
+  extras:
+    Net1: LOWER_OutsideHalo
+    Net2: UPPER
+
+  None: C12
+    Net1: "LOWER_NoHaloOverlap_InsideTop" => "LOWER_OutsideHalo"
+    Net2: "LOWER_PartialSideHaloOverlap_Touching" => "VSUBS"
+    Capacitance [fF]: "0.063" => "73.274"
+  extras:
+    Net1: LOWER_OutsideHalo
+    Net2: VSUBS
+
+  None: C13
+    Net1: "LOWER_NoHaloOverlap_InsideTop" => "LOWER_PartialSideHaloOverlap_BothSides_separated"
+    Net2: "LOWER_OutsideHalo" => "UPPER"
+    Capacitance [fF]: "0.063" => "0.261"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_BothSides_separated
+    Net2: UPPER
+
+  None: C14
+    Net1: "LOWER_FullHaloOverlap" => "LOWER_PartialSideHaloOverlap_BothSides_separated"
+    Net2: "LOWER_OutsideHalo" => "VSUBS"
+    Capacitance [fF]: "0.101" => "7.931"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_BothSides_separated
+    Net2: VSUBS
+
+  None: C15
+    Net1: "LOWER_FullHaloOverlap" => "LOWER_PartialSideHaloOverlap_Separated"
+    Net2: "LOWER_PartialSideHaloOverlap_BothSides_separated" => "UPPER"
+    Capacitance [fF]: "0.001" => "0.149"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Separated
+    Net2: UPPER
+
+  None: C16
+    Net1: "LOWER_FullHaloOverlap" => "LOWER_PartialSideHaloOverlap_Separated"
+    Net2: "LOWER_PartialSideHaloOverlap_Separated" => "VSUBS"
+    Capacitance [fF]: "0.248" => "90.618"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Separated
+    Net2: VSUBS
+
+  None: C17
+    Net1: "LOWER_OutsideHalo" => "LOWER_PartialSideHaloOverlap_Touching"
+    Capacitance [fF]: "0.076" => "32.159"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Touching
+    Net2: UPPER
+
+  None: C18
+    Net1: "LOWER_PartialSideHaloOverlap_BothSides_separated" => "LOWER_PartialSideHaloOverlap_Touching"
+    Net2: "UPPER" => "VSUBS"
+    Capacitance [fF]: "0.261" => "13.637"
+  extras:
+    Net1: LOWER_PartialSideHaloOverlap_Touching
+    Net2: VSUBS
+
+  None: C19
+    Net1: "LOWER_PartialSideHaloOverlap_Separated" => "UPPER"
+    Net2: "UPPER" => "VSUBS"
+    Capacitance [fF]: "0.149" => "214.85"
+  extras:
+    Net1: UPPER
+    Net2: VSUBS

@@ -1,0 +1,17 @@
+2 rows changed
+
+  None: C1
+    Net1: "C1" => "C0"
+    Net2: "VSUBS" => "C1"
+    Capacitance [fF]: "12.588" => "1.874"
+  extras:
+    Net1: C0
+    Net2: C1
+
+  None: C3
+    Net1: "C0" => "C1"
+    Net2: "C1" => "VSUBS"
+    Capacitance [fF]: "1.874" => "12.588"
+  extras:
+    Net1: C1
+    Net2: VSUBS

@@ -1,0 +1,17 @@
+2 rows changed
+
+  None: C7
+    Net1: "met1" => "li1"
+    Net2: "met2" => "met3"
+    Capacitance [fF]: "680.769" => "6.013"
+  extras:
+    Net1: li1
+    Net2: met3
+
+  None: C8
+    Net1: "li1" => "met1"
+    Net2: "met3" => "met2"
+    Capacitance [fF]: "6.013" => "680.769"
+  extras:
+    Net1: met1
+    Net2: met2

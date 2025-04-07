@@ -1,0 +1,42 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "8.231",
+                    "7.5"
+                ],
+                "Net1": [
+                    "B",
+                    "A"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "B"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "7.5",
+                    "8.231"
+                ],
+                "Net1": [
+                    "A",
+                    "B"
+                ],
+                "Net2": [
+                    "B",
+                    "VSUBS"
+                ]
+            },
+            "key": "C3"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}

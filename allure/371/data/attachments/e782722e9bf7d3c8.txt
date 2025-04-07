@@ -1,0 +1,15 @@
+2 rows changed
+
+  None: C1
+    Net2: "VSUBS" => "TOPA"
+    Capacitance [fF]: "405.081" => "215.972"
+  extras:
+    Net1: BOTTOM
+    Net2: TOPA
+
+  None: C3
+    Net2: "TOPA" => "VSUBS"
+    Capacitance [fF]: "215.972" => "405.081"
+  extras:
+    Net1: BOTTOM
+    Net2: VSUBS

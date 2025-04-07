@@ -1,0 +1,31 @@
+4 rows changed
+
+  None: C3
+    Net1: "li1" => "VSUBS"
+    Net2: "met1" => "met2"
+    Capacitance [fF]: "15.71" => "5.291"
+  extras:
+    Net1: VSUBS
+    Net2: met2
+
+  None: C4
+    Net1: "met1" => "li1"
+    Net2: "met2" => "met1"
+    Capacitance [fF]: "257.488" => "15.71"
+  extras:
+    Net1: li1
+    Net2: met1
+
+  None: C5
+    Net1: "VSUBS" => "li1"
+    Capacitance [fF]: "5.291" => "0.152"
+  extras:
+    Net1: li1
+    Net2: met2
+
+  None: C6
+    Net1: "li1" => "met1"
+    Capacitance [fF]: "0.152" => "257.488"
+  extras:
+    Net1: met1
+    Net2: met2

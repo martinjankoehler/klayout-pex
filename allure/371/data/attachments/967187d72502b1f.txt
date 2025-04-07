@@ -1,0 +1,21 @@
+[19:03:42] DEBUG    Working on polygon                 resistor_extraction.py:77
+                    (0,0;0,1000;10000,1000;10000,0)                             
+                    props={} ...                                                
+[19:03:42] DEBUG    Decomposed into 12 triangles with resistor_extraction.py:102
+                    b=1.0 and amax=0.0                                          
+[19:03:42] DEBUG    Using A for node 0 (2 connected   resistor_extraction.py:150
+                    nodes)                                                      
+[19:03:42] DEBUG    Using B for node 11 (2 connected  resistor_extraction.py:150
+                    nodes)                                                      
+[19:03:42] DEBUG    Starting with 12 nodes with 42       resistor_network.py:309
+                    edges.                                                      
+[19:03:42] DEBUG    Nodes left after iteration 1 with    resistor_network.py:335
+                    nmax=3: 8 with 26 edges.                                    
+[19:03:42] DEBUG    Nodes left after iteration 2 with    resistor_network.py:335
+                    nmax=3: 6 with 18 edges.                                    
+[19:03:42] DEBUG    Nodes left after iteration 3 with    resistor_network.py:335
+                    nmax=3: 4 with 10 edges.                                    
+[19:03:42] DEBUG    Nodes left after iteration 4 with    resistor_network.py:335
+                    nmax=3: 2 with 2 edges.                                     
+[19:03:42] DEBUG    Nothing left to eliminate with       resistor_network.py:330
+                    nmax=None.                                                  

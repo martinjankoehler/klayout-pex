@@ -1,0 +1,128 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "3.2",
+                    "1.348"
+                ],
+                "Net1": [
+                    "Complex_Shape_L",
+                    "Complex_Shape_B"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "UPPER"
+                ]
+            },
+            "key": "C1"
+        },
+        {
+            "changes": {
+                "Net1": [
+                    "Complex_Shape_T",
+                    "Complex_Shape_B"
+                ]
+            },
+            "key": "C2"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "3.2",
+                    "0.249"
+                ],
+                "Net1": [
+                    "Complex_Shape_R",
+                    "Complex_Shape_L"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "UPPER"
+                ]
+            },
+            "key": "C3"
+        },
+        {
+            "changes": {
+                "Net1": [
+                    "Complex_Shape_B",
+                    "Complex_Shape_L"
+                ]
+            },
+            "key": "C4"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "13.019",
+                    "0.089"
+                ],
+                "Net1": [
+                    "UPPER",
+                    "Complex_Shape_R"
+                ],
+                "Net2": [
+                    "VSUBS",
+                    "UPPER"
+                ]
+            },
+            "key": "C5"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "1.348",
+                    "3.2"
+                ],
+                "Net1": [
+                    "Complex_Shape_B",
+                    "Complex_Shape_R"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "VSUBS"
+                ]
+            },
+            "key": "C6"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.089",
+                    "3.2"
+                ],
+                "Net1": [
+                    "Complex_Shape_R",
+                    "Complex_Shape_T"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "VSUBS"
+                ]
+            },
+            "key": "C8"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "0.249",
+                    "13.019"
+                ],
+                "Net1": [
+                    "Complex_Shape_L",
+                    "UPPER"
+                ],
+                "Net2": [
+                    "UPPER",
+                    "VSUBS"
+                ]
+            },
+            "key": "C9"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}

@@ -1,0 +1,42 @@
+{
+    "added": [],
+    "changed": [
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "680.769",
+                    "6.013"
+                ],
+                "Net1": [
+                    "met1",
+                    "li1"
+                ],
+                "Net2": [
+                    "met2",
+                    "met3"
+                ]
+            },
+            "key": "C7"
+        },
+        {
+            "changes": {
+                "Capacitance [fF]": [
+                    "6.013",
+                    "680.769"
+                ],
+                "Net1": [
+                    "li1",
+                    "met1"
+                ],
+                "Net2": [
+                    "met3",
+                    "met2"
+                ]
+            },
+            "key": "C8"
+        }
+    ],
+    "columns_added": [],
+    "columns_removed": [],
+    "removed": []
+}

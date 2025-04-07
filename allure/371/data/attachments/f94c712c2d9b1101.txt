@@ -1,0 +1,61 @@
+8 rows changed
+
+  None: C1
+    Net1: "Complex_Shape_L" => "Complex_Shape_B"
+    Net2: "VSUBS" => "UPPER"
+    Capacitance [fF]: "3.2" => "1.348"
+  extras:
+    Net1: Complex_Shape_B
+    Net2: UPPER
+
+  None: C2
+    Net1: "Complex_Shape_T" => "Complex_Shape_B"
+  extras:
+    Net1: Complex_Shape_B
+    Net2: VSUBS
+
+  None: C3
+    Net1: "Complex_Shape_R" => "Complex_Shape_L"
+    Net2: "VSUBS" => "UPPER"
+    Capacitance [fF]: "3.2" => "0.249"
+  extras:
+    Net1: Complex_Shape_L
+    Net2: UPPER
+
+  None: C4
+    Net1: "Complex_Shape_B" => "Complex_Shape_L"
+  extras:
+    Net1: Complex_Shape_L
+    Net2: VSUBS
+
+  None: C5
+    Net1: "UPPER" => "Complex_Shape_R"
+    Net2: "VSUBS" => "UPPER"
+    Capacitance [fF]: "13.019" => "0.089"
+  extras:
+    Net1: Complex_Shape_R
+    Net2: UPPER
+
+  None: C6
+    Net1: "Complex_Shape_B" => "Complex_Shape_R"
+    Net2: "UPPER" => "VSUBS"
+    Capacitance [fF]: "1.348" => "3.2"
+  extras:
+    Net1: Complex_Shape_R
+    Net2: VSUBS
+
+  None: C8
+    Net1: "Complex_Shape_R" => "Complex_Shape_T"
+    Net2: "UPPER" => "VSUBS"
+    Capacitance [fF]: "0.089" => "3.2"
+  extras:
+    Net1: Complex_Shape_T
+    Net2: VSUBS
+
+  None: C9
+    Net1: "Complex_Shape_L" => "UPPER"
+    Net2: "UPPER" => "VSUBS"
+    Capacitance [fF]: "0.249" => "13.019"
+  extras:
+    Net1: UPPER
+    Net2: VSUBS
