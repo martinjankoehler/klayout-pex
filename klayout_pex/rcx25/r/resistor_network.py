@@ -182,6 +182,11 @@ class ResistorNetwork:
         """
         return [nid for (p, nid) in self.nodes.items() if edge.contains(p)]
 
+    # TODO: add this variant
+    def node_id_and_name(self, point: kdb.Point) -> Tuple[NodeID, str]:
+        # TODO
+        pass
+
     def node_id(self, point: kdb.Point) -> NodeID:
         """
         Gets the node ID for a given point

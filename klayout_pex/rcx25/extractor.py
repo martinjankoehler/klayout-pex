@@ -415,6 +415,11 @@ class RCX25Extractor:
                     )
                     result_network.via_resistors.append(via_resistor)
 
+                    if len(matches_top) > 1:
+                        warning(f"Multiple Top matches found: {matches_top}, for via {via_polygon}, using first…")
+                    elif match_top[0] is None:
+                        error(f"Top net is None: {via_resistor}")
+
             # import rich.pretty
             # rich.pretty.pprint(result_network)
             results.resistor_network = result_network
