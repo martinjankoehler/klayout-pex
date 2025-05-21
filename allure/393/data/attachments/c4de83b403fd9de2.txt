@@ -1,0 +1,1 @@
+Wrote reduced netlist to: /tmp/TOP_Reduced_Netlist_f4qv4_mu.cir

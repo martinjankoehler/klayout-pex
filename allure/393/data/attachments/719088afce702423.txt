@@ -1,0 +1,10 @@
+DEBUG    __kpex__:resistor_extraction.py:77 Working on polygon (0,0;0,1000;10000,1000;10000,0) props={} ...
+DEBUG    __kpex__:resistor_extraction.py:104 Decomposed into 12 triangles with b=1.0 and amax=0.0
+DEBUG    __kpex__:resistor_extraction.py:152 Using A for node 0 (2 connected nodes)
+DEBUG    __kpex__:resistor_extraction.py:152 Using B for node 11 (2 connected nodes)
+DEBUG    __kpex__:resistor_network.py:314 Starting with 12 nodes with 42 edges.
+DEBUG    __kpex__:resistor_network.py:340 Nodes left after iteration 1 with nmax=3: 8 with 26 edges.
+DEBUG    __kpex__:resistor_network.py:340 Nodes left after iteration 2 with nmax=3: 6 with 18 edges.
+DEBUG    __kpex__:resistor_network.py:340 Nodes left after iteration 3 with nmax=3: 4 with 10 edges.
+DEBUG    __kpex__:resistor_network.py:340 Nodes left after iteration 4 with nmax=3: 2 with 2 edges.
+DEBUG    __kpex__:resistor_network.py:335 Nothing left to eliminate with nmax=None.
