@@ -239,8 +239,10 @@ class RCX25Extractor:
                     continue
 
                 for lyr in lyr_info.source_layers:
-                    regions_by_klayout_index[lyr.index] = lyr.region
-                    layer_names_by_klayout_index[lyr.index] = canonical_layer_name
+                    klayout_index = self.pex_context.annotated_layout.layer(*lyr.gds_pair)
+
+                    regions_by_klayout_index[klayout_index] = lyr.region
+                    layer_names_by_klayout_index[klayout_index] = canonical_layer_name
 
                     pins = self.pex_context.pins_of_layer(gds_pair)
                     labels = self.pex_context.labels_of_layer(gds_pair)
@@ -274,9 +276,18 @@ class RCX25Extractor:
 
                 layer_id = rn.layer()
                 canonical_layer_name = layer_names_by_klayout_index[layer_id]
-
-                port_idx = rn.port_index()
-                port_net_name = vertex_port_net_names[port_idx]
+                
+                port_net_name: str
+                match rn.type():
+                    case klp.RNodeType.VertexPort:
+                        port_idx = rn.port_index()
+                        port_net_name = vertex_port_net_names[port_idx]
+                    case klp.RNodeType.PolygonPort:
+                        port_idx = rn.port_index()
+                        pass
+                        # TODO: port_net_name = polygon_port_net_names[port_idx]
+                    case _:
+                        port_net_name = node_name
 
                 subproc(f"\t\tNode #{hex(node_id)} '{node_name}' of net '{port_net_name}' "
                         f"on layer '{canonical_layer_name}' at {loc} ({loc.x * dbu} µm, {loc.y * dbu} µm)")
@@ -285,7 +296,7 @@ class RCX25Extractor:
             for el in resistor_networks.each_element():
                 node_a = el.a()
                 node_b = el.b()
-                ohm = el.resistance()
+                ohm = el.resistance() / 1000.0
                 subproc(f"\t\t{node_a.to_s()} ↔︎ {node_b.to_s()}: {round(ohm, 3)} Ω")
 
                 # visited_resistors: Set[Conductance] = set()
@@ -302,6 +313,8 @@ class RCX25Extractor:
                 #         subproc(f"\t\t{node_name} ↔︎ {other_node_name}: {round(ohm, 3)} Ω    (internally: {conductance.cond})")
                 #
 
+            devices_by_name = self.pex_context.devices_by_name
+            report.output_devices(devices_by_name)
 
             # rex = ResistorExtraction(b=self.delaunay_b, amax=self.delaunay_amax)
             #

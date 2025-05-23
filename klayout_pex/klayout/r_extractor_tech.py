@@ -92,9 +92,12 @@ def create_r_extractor_tech(extraction_context: KLayoutExtractionContext,
                     top_gds_pair = tech.gds_pair(top)
 
                     via.bottom_conductor = extraction_context.annotated_layout.layer(*bot_gds_pair)
-                    via.cut_layer = source_layer.index
+                    via.cut_layer = extraction_context.annotated_layout.layer(*source_layer.gds_pair)
                     via.top_conductor = extraction_context.annotated_layout.layer(*top_gds_pair)
-                    via.resistance = via_resistance.resistance
+
+                    contact = extraction_context.tech.contact_by_contact_layer_name[canonical_layer_name]
+
+                    via.resistance = via_resistance.resistance * contact.width**2
                     via.merge_distance = via_merge_distance
                     rex_tech.add_via(via)
         else:
