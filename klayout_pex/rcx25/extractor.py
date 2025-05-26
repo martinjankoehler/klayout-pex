@@ -256,7 +256,7 @@ class RCX25Extractor:
                         #    (ResistorExtractor will subtract the pins from the metal polygons,
                         #     so in the extreme case the polygons could become empty)
 
-                        vertex_ports[lyr.index].append(l.position())
+                        vertex_ports[klayout_index].append(l.position())
                         vertex_port_net_names.append(l.string)
 
                         pin_point = l.bbox().enlarge(5)
@@ -276,7 +276,7 @@ class RCX25Extractor:
 
                 layer_id = rn.layer()
                 canonical_layer_name = layer_names_by_klayout_index[layer_id]
-                
+
                 port_net_name: str
                 match rn.type():
                     case klp.RNodeType.VertexPort:

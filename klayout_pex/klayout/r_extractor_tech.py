@@ -80,7 +80,7 @@ def create_r_extractor_tech(extraction_context: KLayoutExtractionContext,
                             cond.algorithm = substrate_algorithm
                         else:
                             cond.algorithm = wire_algorithm
-                        cond.layer = source_layer.index
+                        cond.layer = extraction_context.annotated_layout.layer(*source_layer.gds_pair)
                         cond.resistance = contact_resistance.resistance
                         rex_tech.add_conductor(cond)
             else:
@@ -110,7 +110,7 @@ def create_r_extractor_tech(extraction_context: KLayoutExtractionContext,
                     cond.algorithm = substrate_algorithm
                 else:
                     cond.algorithm = wire_algorithm
-                cond.layer = source_layer.index
+                cond.layer = extraction_context.annotated_layout.layer(*source_layer.gds_pair)
                 cond.resistance = layer_resistance.resistance
                 # TODO: ... = layer_resistance.corner_adjustment_fraction ????
                 rex_tech.add_conductor(cond)
