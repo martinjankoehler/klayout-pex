@@ -1,0 +1,5 @@
+[15:34:26] DEBUG    Starting with 4 nodes with 12 edges. resistor_network.py:309
+[15:34:26] DEBUG    Nodes left after iteration 1 with    resistor_network.py:335
+                    nmax=3: 2 with 2 edges.                                     
+[15:34:26] DEBUG    Nothing left to eliminate with       resistor_network.py:330
+                    nmax=None.                                                  
